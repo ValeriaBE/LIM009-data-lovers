@@ -1,18 +1,104 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <!-- <script src="./data/injuries/injuries.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/steam/steam.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-    <!-- <script src="./data/lol/lol.js"></script> -->
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datature</title>
+  <link rel="icon" href="img/eagle.ico">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<body>
+  <header>
+    <div class="topnav">
+      <div id="menu-de-logo" class=" display-inline center-items menu-de-logo">
+        <img class="icon display-inline" src="img/eagle.svg" alt="emoji injured">
+        <h1 class="display-inline datature">Datature</h1>
+      </div>
+      <div class="search-container display-inline">
+        <form action="/action_page.php">
+          <input type="text" placeholder="Search.." name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+    <div id="menu-principal" class="menu-principal">
+      <nav class=" navbar">
+        <ul>
+          <li class="display-inline">
+            <button id="home-menu-btn"><i class="fa fa-fw fa-home"></i>Home</button>
+          </li>
+
+          <li class="display-inline">
+            <button class="dropdown" id="tipo-menu-btn"><i class="fa fa-fw fa-medkit"></i>Type of accident</button>
+          </li>
+          <li class="display-inline">
+            <button id="año-menu-btn"><i class="fa fa-fw fa-calendar"></i>Year of accident</button>
+          </li>
+          <li class="display-inline">
+            <button id="about-menu-btn"><i class="fa fa-fw fa-user"></i>About us</button>
+          </li>
+          <li class="display-inline">
+            <button id="contact-menu-btn"><i class="fa fa-fw fa-envelope"></i>Contact us</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div id="home-screen">
+    <section>
+      <p>contenido home...</p>
+    </section>
+  </div>
+  <div id="about-us-screen">
+    <section>
+      <p>contenido....</p>
+    </section>
+  </div>
+  <div id="contact-us-screen">
+    <section>
+      <p>contenido contact...</p>
+    </section>
+  </div>
+  <div id="type-accident-screen" class="center-content">
+    <div class="center-items">
+      <button class="type-btns train" id="train"></button>
+      <button class="type-btns boat" id="boat"></button>
+    </div>
+  </div>
+  <div id="year-accident-screen">
+    <section>
+      <p>contenido año...</p>
+    </section>
+  </div>
+  <div id="train-screen">
+    <p id="data-train"></p>
+  </div>
+  <div id="boat-screen">
+    <p id="data-boats"></p>
+  </div>
+  <footer>
+    <small>Follow us</small>
+    <div class="social-icon">
+      <a href="https://es-la.facebook.com/laboratoriala/">
+        <p class="fab fa-facebook-f facebook-bg"></p>
+      </a>
+      <a href="https://twitter.com/Laboratoriala?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
+        <p class="fab fa-twitter twitter-bg"></p>
+      </a>
+      <a href="https://www.instagram.com/laboratoriala/?hl=es-la">
+        <p class="fab fa-instagram instagram-bg"></p>
+      </a>
+    </div>
+    <small>Copyright &copy; 2019, All Right Reserved <a
+        href="https://convocatoria.laboratoria.la/?gclid=EAIaIQobChMIjLqXraKA4QIVwV6GCh2i3gWSEAAYASAAEgJuffD_BwE">Laboratoria</a></small>
+  </footer>
+  <script src="./data/injuries/injuries.js"></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>
