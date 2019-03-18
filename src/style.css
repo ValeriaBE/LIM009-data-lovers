@@ -5,7 +5,16 @@
 .display-inline{
     display: inline;
 }
+
+.menu-de-logo{
+  float: left;
+  display: block;
+}
+.datature{
+  color: white;
+}
 .icon{
+  padding-left: 20px;
   padding-top: 10px;
     width:50px;
     height:50px;
@@ -16,11 +25,13 @@
 .topnav {
   overflow: hidden;
   background-color: #e9e9e9;
+  background-color: #323a45;
   padding-bottom: 10px;
 }
 
 .topnav .search-container {
   float: right;
+  padding-top: 15px;
 }
 
 .topnav input[type=text] {
@@ -104,6 +115,13 @@
     background-color: #fff;
   }
 
+    background-color:#dce4ef;
+  }
+
+ .navbar ul li button:hover {
+    background-color: rgb(233, 233, 233);
+  }
+
   .type-btns{
     width:50px;
     height: 50px;
@@ -138,4 +156,22 @@ footer {
 }
 .vertical-align{
   vertical-align: middle;
+.social-icon a {
+  color: #fff;
+}
+.social-icon p {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50%;
+}
+.facebook-bg{
+  background:  rgb(187, 187, 187);
+}
+.twitter-bg{
+  background:  rgb(187, 187, 187);
+}
+.instagram-bg{
+  background: rgb(187, 187, 187);
 }

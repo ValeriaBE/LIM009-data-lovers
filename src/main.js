@@ -17,11 +17,17 @@ const yearScreen = document.getElementById("year-accident-screen");
 let seleccionarAño = document.getElementById('Years');
 let visualizarData = document.getElementById('datos');
 let resultado = document.getElementById('resultado');
+const trainScreen=document.getElementById("train-screen");
+const trainBtn=document.getElementById("train");
+const boatScreen=document.getElementById("boat-screen");
+const boatBtn=document.getElementById("boat");
 
 aboutScreen.style.display = "none";
 contactScreen.style.display = "none";
 typeScreen.style.display = "none";
 yearScreen.style.display = "none";
+boatScreen.style.display="none";
+trainScreen.style.display="none";
 
 homeButton.addEventListener("click", () => {
     homeScreen.style.display = "block";
@@ -29,6 +35,8 @@ homeButton.addEventListener("click", () => {
     contactScreen.style.display = "none";
     typeScreen.style.display = "none";
     document.getElementById("data").innerHTML= window.search(INJURIES, 929);
+    boatScreen.style.display="none";
+    trainScreen.style.display="none";
 });
 
 aboutButton.addEventListener("click", () => {
@@ -36,6 +44,8 @@ aboutButton.addEventListener("click", () => {
     contactScreen.style.display = "none";
     typeScreen.style.display = "none";
     yearScreen.style.display = "none";
+    boatScreen.style.display="none";
+    trainScreen.style.display="none";
     aboutScreen.style.display = "block";
 });
 
@@ -44,6 +54,8 @@ contactButton.addEventListener("click", () => {
     typeScreen.style.display = "none";
     yearScreen.style.display = "none";
     aboutScreen.style.display = "none";
+    boatScreen.style.display="none";
+    trainScreen.style.display="none";
     contactScreen.style.display = "block";
 });
 
@@ -52,6 +64,8 @@ typeButton.addEventListener("click", () => {
     contactScreen.style.display = "none";
     yearScreen.style.display = "none";
     aboutScreen.style.display = "none";
+    boatScreen.style.display="none";
+    trainScreen.style.display="none";
     typeScreen.style.display = "block";
 });
 
@@ -72,3 +86,29 @@ visualizarData.addEventListener("click", () => {
   resultado.innerHTML = `<b>Year:  </b>${seleccionarAño.value.substr(0,4)}<br><br><b> Recreational: </b>${arrayData[0]} <br><b>Train:  </b>${arrayData[1]} `;
   return arrayData;
 });
+    boatScreen.style.display="none";
+    trainScreen.style.display="none";
+    yearScreen.style.display = "block";
+});
+
+trainBtn.addEventListener("click",()=>{
+    homeScreen.style.display = "none";
+    contactScreen.style.display = "none";
+    typeScreen.style.display = "none";
+    aboutScreen.style.display = "none";
+    yearScreen.style.display = "none";
+    boatScreen.style.display="none";
+    trainScreen.style.display="block";
+    document.getElementById("data-train").innerHTML=window.trains();
+});
+
+boatBtn.addEventListener("click", ()=>{
+    homeScreen.style.display = "none";
+    contactScreen.style.display = "none";
+    typeScreen.style.display = "none";
+    aboutScreen.style.display = "none";
+    yearScreen.style.display = "none";
+    trainScreen.style.display="none";
+    boatScreen.style.display="block";
+    document.getElementById("data-boats").innerHTML=window.boating();
+})
