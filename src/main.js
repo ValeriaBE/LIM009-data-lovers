@@ -104,6 +104,8 @@ boatBtn.addEventListener("click", ()=>{
     document.getElementById("data-boats").innerHTML=window.boating();
 })
 
+//  funcion filtar
+
 visualizeData.addEventListener("click", () => {
     let yearValue = selectYear.value;
     const resultData = window.data.consult(searchData, yearValue);
