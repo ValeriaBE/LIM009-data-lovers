@@ -10,37 +10,39 @@ window.data = {
     "Total_Injured_Persons_Train_Accidents_Rail_Roads",
 
  ],
-  getData: (BuscarData) => {
-    let retornarData = [];
-    for (let año of INJURIES) {
-    retornarData.push({
-        year: año.Year.substr(0, 1),
-        number: año[BuscarData]
+    getData: (searchData) => {
+    let returnData = [];
+    for (let years of INJURIES) {
+    returnData.push({
+        year: years.Year.substr(0, 1),
+        number: years[searchData]
       });
     }
-    return retornarData;
-  },
+    return returnData;
+    },
 
-  consult: (BuscarData, yearValue) => {
-    const añoData = BuscarData.find(element => element.Year === yearValue);
-    const nuevoAño = {};
+    consult: (searchData, yearValue) => {
+    const yaerData = searchData.find(element => element.Year === yearValue);
+    const newYear = {};
     for (const key of window.data.dataKeys) {
-        nuevoAño[key] = añoData[key];
+        newYear[key] = yaerData[key];
     }
-    return nuevoAño;
+    return newYear;
   }
 };
 
-
-window.example = example;
-const boating=()=>{
-  return INJURIES.map(injury => `${injury.Total_Injured_Persons_Recreational_Boating}
-  ${injury.Year}`);
+    const example = () => {
+    return 'example';
 };
-window.boating=boating;
-
-const trains=()=>{
-  return INJURIES.map(injury => `${injury.Total_Injured_Persons_Train_Accidents_Rail_Roads}
-  ${injury.Year}`);
+    window.example = example;
+    const boating=()=>{
+    return INJURIES.map(injury => `${injury.Total_Injured_Persons_Recreational_Boating}
+    ${injury.Year}`);
 };
-window.trains=trains;
+    window.boating=boating;
+
+    const trains=()=>{
+    return INJURIES.map(injury => `${injury.Total_Injured_Persons_Train_Accidents_Rail_Roads}
+    ${injury.Year}`);
+};
+    window.trains=trains;

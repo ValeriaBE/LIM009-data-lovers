@@ -1,5 +1,5 @@
-const BuscarData = window.INJURIES;
-/* Manejo del DOM */
+const searchData = window.INJURIES;
+
 const menuContact = document.getElementById("menu-de-contacto");
 const searchButton = document.getElementById("search-header-btn");
 const homeButton = document.getElementById("home-menu-btn");
@@ -14,14 +14,16 @@ const aboutScreen = document.getElementById("about-us-screen");
 const contactScreen = document.getElementById("contact-us-screen");
 const typeScreen = document.getElementById("type-accident-screen");
 const yearScreen = document.getElementById("year-accident-screen");
-let seleccionarAño = document.getElementById('Years');
-let visualizarData = document.getElementById('datos');
-let resultado = document.getElementById('resultado');
 const trainScreen=document.getElementById("train-screen");
 const trainBtn=document.getElementById("train");
 const boatScreen=document.getElementById("boat-screen");
 const boatBtn=document.getElementById("boat");
-
+let selectYear = document.getElementById('Years');
+let visualizeData = document.getElementById('see-data');
+let result = document.getElementById('result');
+const formulario=document.querySelector("#formulario");
+const boton =document.querySelector("#boton");
+const resultado=document.querySelector("#resultado");
 aboutScreen.style.display = "none";
 contactScreen.style.display = "none";
 typeScreen.style.display = "none";
@@ -34,7 +36,6 @@ homeButton.addEventListener("click", () => {
     aboutScreen.style.display = "none";
     contactScreen.style.display = "none";
     typeScreen.style.display = "none";
-    document.getElementById("data").innerHTML= window.search(INJURIES, 929);
     boatScreen.style.display="none";
     trainScreen.style.display="none";
 });
@@ -74,18 +75,6 @@ yearButton.addEventListener("click", () => {
     contactScreen.style.display = "none";
     typeScreen.style.display = "none";
     aboutScreen.style.display = "none";
-    yearScreen.style.display = "block";
-});
-
-//Búsqueda por año
-visualizarData.addEventListener("click", () => {
-  let yearValue = seleccionarAño.value;
-  const resultData = window.data.consult(BuscarData, yearValue);
-  let arrayData = Object.values(resultData);
-
-  resultado.innerHTML = `<b>Year:  </b>${seleccionarAño.value.substr(0,4)}<br><br><b> Recreational: </b>${arrayData[0]} <br><b>Train:  </b>${arrayData[1]} `;
-  return arrayData;
-});
     boatScreen.style.display="none";
     trainScreen.style.display="none";
     yearScreen.style.display = "block";
@@ -100,6 +89,8 @@ trainBtn.addEventListener("click",()=>{
     boatScreen.style.display="none";
     trainScreen.style.display="block";
     document.getElementById("data-train").innerHTML=window.trains();
+
+
 });
 
 boatBtn.addEventListener("click", ()=>{
@@ -112,3 +103,45 @@ boatBtn.addEventListener("click", ()=>{
     boatScreen.style.display="block";
     document.getElementById("data-boats").innerHTML=window.boating();
 })
+
+visualizeData.addEventListener("click", () => {
+    let yearValue = selectYear.value;
+    const resultData = window.data.consult(searchData, yearValue);
+  
+    let arrayData = Object.values(resultData);
+  
+    result.innerHTML = `<b>Year:  </b>${selectYear.value.substr(0,4)}<br><br><b> Recreational: </b>${arrayData[0]} <br><b>Train:  </b>${arrayData[1]} `;
+    return arrayData;
+  });
+  
+
+  //search interno
+  const contenidos=[
+    {nombre:'Valeria'},
+    {nombre:'Rocio'},
+    {nombre:'recreational'},
+    {nombre:'injuries'},
+    {nombre:'train'},
+]
+const filtrar =()=>{
+    // console.log(formulario.value);
+    resultado.innerHTML='';
+    const texto=formulario.value.toLowerCase();
+    for(let contenido of contenidos ){
+        let nombre=contenido.nombre.toLowerCase();
+        if(nombre.indexOf(texto)!==-1){
+            resultado.innerHTML +=`
+            <li>${contenido.nombre}</li>
+            `
+        }
+    }
+    if( resultado.innerHTML === ''){
+       resultado.innerHTML +=`
+            <li>contenido no encontrado...</li>
+            `
+    }
+
+ }
+ boton.addEventListener('click',filtrar)
+ formulario.addEventListener('keyup', filtrar)
+ filtrar();
