@@ -20,3 +20,19 @@ const showTrains=(INJURIES)=>{
   return newarrayTrains;
 };
 window.trains=showTrains;
+
+
+let newarrayYear=[];
+const showAccidentsByYear=(array,option)=>{
+  for(let i=0;i<array.length;i++){
+  if(array[i].Year===option){
+    newarrayYear=(`
+    ${array[i].Year}<br>
+    <br>${array[i].Total_Injured_Persons_Recreational_Boating}<br>
+    ${array[i].Total_Injured_Persons_Train_Accidents_Rail_Roads}<br>` );
+  }
+  }
+  return newarrayYear;
+};
+window.showAccidentsByYear=showAccidentsByYear;
+ 
