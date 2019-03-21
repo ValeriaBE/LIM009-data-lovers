@@ -9,6 +9,10 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Radley" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Radley|Sawarabi+Mincho" rel="stylesheet">
 </head>
 
 <body>
@@ -16,12 +20,12 @@
     <div class="topnav">
       <div id="menu-de-logo" class=" display-inline center-items menu-de-logo">
         <img class="icon display-inline" src="img/eagle.svg" alt="emoji injured">
-        <h1 class="display-inline datature">Datature</h1>
+        <h1 class="display-inline text-font color-white">Datature</h1>
       </div>
       <div class="search-container display-inline">
-        <form action="/action_page.php">
-          <input type="text" placeholder="Search.." name="search">
-          <button type="submit"><i class="fa fa-search"></i></button>
+        <form action="">
+          <input type="search">
+          <i class="fa fa-search"></i>
         </form>
       </div>
     </div>
@@ -29,20 +33,19 @@
       <nav class=" navbar">
         <ul>
           <li class="display-inline">
-            <button id="home-menu-btn"><i class="fa fa-fw fa-home"></i>Home</button>
-          </li>
-
-          <li class="display-inline">
-            <button class="dropdown" id="tipo-menu-btn"><i class="fa fa-fw fa-medkit"></i>Type of accident</button>
+            <button id="home-menu-btn" class="text-font-btn">Home</button>
           </li>
           <li class="display-inline">
-            <button id="año-menu-btn"><i class="fa fa-fw fa-calendar"></i>Year of accident</button>
+            <button id="tipo-menu-btn" class="text-font-btn">Type of accident</button>
           </li>
           <li class="display-inline">
-            <button id="about-menu-btn"><i class="fa fa-fw fa-user"></i>About us</button>
+            <button id="año-menu-btn" class="text-font-btn">Year of accident</button>
           </li>
           <li class="display-inline">
-            <button id="contact-menu-btn"><i class="fa fa-fw fa-envelope"></i>Contact us</button>
+            <button id="about-menu-btn" class="text-font-btn">About us</button>
+          </li>
+          <li class="display-inline">
+            <button id="contact-menu-btn" class="text-font-btn">Contact us</button>
           </li>
         </ul>
       </nav>
@@ -71,7 +74,43 @@
   </div>
   <div id="year-accident-screen">
     <section>
-      <p>contenido año...</p>
+      <h3>Search by year</h3>
+      <select id="Years">
+        <option> YEAR </option>
+        <option value="1960-01-04">1960</option>
+        <option value="1965-01-04">1965</option>
+        <option value="1975-01-04">1975</option>
+        <option value="1980-01-04">1980</option>
+        <option value="1985-01-04">1985</option>
+        <option value="1990-01-04">1990</option>
+        <option value="1991-01-04">1991</option>
+        <option value="1992-01-04">1992</option>
+        <option value="1993-01-04">1993</option>
+        <option value="1994-01-04">1994</option>
+        <option value="1995-01-04">1995</option>
+        <option value="1996-01-04">1996</option>
+        <option value="1997-01-04">1997</option>
+        <option value="1998-01-04">1998</option>
+        <option value="1999-01-04">1999</option>
+        <option value="2001-01-04">2001</option>
+        <option value="2002-01-04">2002</option>
+        <option value="2003-01-04">2003</option>
+        <option value="2004-01-04">2004</option>
+        <option value="2005-01-04">2005</option>
+        <option value="2006-01-04">2006</option>
+        <option value="2007-01-04">2007</option>
+        <option value="2008-01-04">2008</option>
+        <option value="2009-01-04">2009</option>
+        <option value="2010-01-04">2010</option>
+        <option value="2011-01-04">2011</option>
+        <option value="2012-01-04">2012</option>
+        <option value="2013-01-04">2013</option>
+        <option value="2014-01-04">2014</option>
+        <option value="2015-01-04">2015</option>
+        <option value="2016-01-04">2016</option>
+      </select>
+      <button id="see-data">SEE DATA</button>
+      <div id="result"></div>
     </section>
   </div>
   <div id="train-screen">
@@ -80,22 +119,19 @@
   <div id="boat-screen">
     <p id="data-boats"></p>
   </div>
-  <footer>
-    <small>Follow us</small>
-    <div class="social-icon">
-      <a href="https://es-la.facebook.com/laboratoriala/">
-        <p class="fab fa-facebook-f facebook-bg"></p>
+  <!--<footer>
+    <div class="social-icon color-white">
+      <a class="color-white" href="https://es-la.facebook.com/laboratoriala/">
+        <p class=" color-white fab fa-facebook-f facebook-bg"></p>
       </a>
-      <a href="https://twitter.com/Laboratoriala?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
-        <p class="fab fa-twitter twitter-bg"></p>
+      <a class="color-white" href="https://twitter.com/Laboratoriala?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
+        <p class=" color-white fab fa-twitter twitter-bg"></p>
       </a>
-      <a href="https://www.instagram.com/laboratoriala/?hl=es-la">
-        <p class="fab fa-instagram instagram-bg"></p>
+      <a class="color-white" href="https://www.instagram.com/laboratoriala/?hl=es-la">
+        <p class="color-white fab fa-instagram instagram-bg"></p>
       </a>
     </div>
-    <small>Copyright &copy; 2019, All Right Reserved <a
-        href="https://convocatoria.laboratoria.la/?gclid=EAIaIQobChMIjLqXraKA4QIVwV6GCh2i3gWSEAAYASAAEgJuffD_BwE">Laboratoria</a></small>
-  </footer>
+  </footer>-->
   <script src="./data/injuries/injuries.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>

@@ -1,21 +1,22 @@
-/* Manejo de data */
 
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
+  let newarrayBoats=[];
+  const showBoats=(array)=>{
+    for(let i=0;i<array.length;i++){
+      newarrayBoats+=(
+        `<br>${array[i].Year}<br>
+      ${array[i].Total_Injured_Persons_Recreational_Boating}<br>` );
+    }
+    return newarrayBoats;
+  };
+window.showBoats=showBoats;
 
-const example = () => {
-  return 'example';
+let newarrayTrains=[];
+const showTrains=(INJURIES)=>{
+  for(let i=0;i<INJURIES.length;i++){
+    newarrayTrains+=(
+      `<br>${INJURIES[i].Year}<br>
+    ${INJURIES[i].Total_Injured_Persons_Train_Accidents_Rail_Roads}<br>` );
+  }
+  return newarrayTrains;
 };
-
-window.example = example;
-const boating=()=>{
-  return INJURIES.map(injury => `${injury.Total_Injured_Persons_Recreational_Boating} 
-  ${injury.Year}`);
-};
-window.boating=boating;
-
-const trains=()=>{
-  return INJURIES.map(injury => `${injury.Total_Injured_Persons_Train_Accidents_Rail_Roads} 
-  ${injury.Year}`);
-};
-window.trains=trains;
+window.trains=showTrains;
