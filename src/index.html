@@ -24,7 +24,7 @@
       </div>
       <div class="search-container display-inline">
         <form action="">
-          <input class="position-absolute" type="search">
+          <input class=" search position-absolute" type="search">
           <i class="fa position-absolute text-align-center fa-search"></i>
         </form>
       </div>
@@ -72,10 +72,9 @@
       <button class="type-btns boat" id="boat">Boats</button>
     </div>
   </div>
-  <div id="year-accident-screen">
-    <section>
-      <h3>Search by year</h3>
-      <select id="Years">
+  <div id="year-accident-screen" class="center-content">
+    <section class="center-content">
+      <select id="Years" class="year-dropdown-box">
         <option> YEAR </option>
         <option value="1960-01-04">1960</option>
         <option value="1965-01-04">1965</option>
@@ -109,15 +108,15 @@
         <option value="2015-01-04">2015</option>
         <option value="2016-01-04">2016</option>
       </select>
-      <button id="see-data">SEE DATA</button>
-      <div id="result"></div>
+      <button id="see-data" class="see-data-btn">SEE DATA</button>
+      <div id="year-data"></div>
     </section>
   </div>
   <div id="train-screen">
-    <p id="data-train"></p>
+    <div id="data-train"></div>
   </div>
   <div id="boat-screen">
-    <p id="data-boats"></p>
+    <div id="data-boats"></div>
   </div>
   <!--<footer class="position-absolute text-align-center">
     <div class="social-icon color-white">

@@ -5,6 +5,9 @@
 .display-inline{
 display: inline;
 }
+.display-inline-block{
+  display: inline-block;
+  }
 .postion-absolute{
   position: absolute;
 }
@@ -62,7 +65,7 @@ form{
   padding: 5px;
 }
 
-input{
+.search{
   top: 0;
   left: 0;
   width: 100%;;
@@ -75,8 +78,6 @@ input{
   border-radius: 20px;
   padding: 0 20px;
 }
-
-
 .fa{
   box-sizing: border-box;
   padding: 10px;
@@ -116,6 +117,7 @@ form:hover .fa{
     float: left;
     padding: 12px;
     width: 20%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+    height: 70px;
     border: none;
     border-block-end-color: #e8e8e8;
     background-color:#dce4ef;
@@ -150,6 +152,24 @@ width: 50%;
 padding: 10px;
 }
 
+.year-dropdown-box{
+  width: 237px;
+  height: 39px;
+  border-radius: 10px;
+  border: solid 2px #c4c4c4;
+}
+.see-data-btn{
+  width: 108px;
+  height: 37px;
+  border-radius: 30px;
+  border: solid 2px #046b99;
+}
+
+.box-type-year{
+  width: 286px;
+  height: 321px;
+  border: solid 2px #dce4ef;
+}
 footer {
 right: 0;
 bottom: 0;
@@ -173,3 +193,77 @@ background:  rgb(187, 187, 187);
 .instagram-bg{
 background: rgb(187, 187, 187);
 }
+
+.column {
+  float: left;
+  width: 100%;
+  padding: 0 10px;
+  
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {
+  margin: 20px 30px 10px 40px;
+  
+}
+
+/* Clear floats after the columns */
+.row:after {
+  clear: both;
+}
+
+.boxes-design-type{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px)  {
+.navbar ul li button{
+  width: 100%;
+}
+.menu-de-logo{
+  width:50%
+}
+.search-container{
+  width:20%;
+  height: 20px;
+}
+.search{
+  height: 10px;
+}
+form{
+  height: 22px;
+  left: 30%;
+  transform: translate(-70%,70%);
+  width: 30px;
+  height: 30px;
+}
+form:hover {
+  width: 160px;
+}
+.fa{
+  width: 35px;
+  height: 35px;
+  top: -8px;
+  right: -5px;
+}
+.row {
+  margin:0px;
+}
+.column {
+  float: left;
+  width: 100%;
+}
+
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+.navbar ul li button{
+  width:20%;
+  font-size:18px;
+}
+}
+
+    
