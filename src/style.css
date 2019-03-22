@@ -14,6 +14,9 @@ display: inline;
 .text-align-center{
   text-align: center;
 }
+.vertical-align{
+  vertical-align: middle;
+}
 .text-font{
   font-family: Radley;
 }
@@ -164,10 +167,13 @@ padding: 10px;
   border-radius: 30px;
   border: solid 2px #046b99;
 }
-
+.space{
+  margin-right: 20px;
+}
 .box-type-year{
   width: 286px;
   height: 321px;
+  margin-top:20px;
   border: solid 2px #dce4ef;
 }
 footer {

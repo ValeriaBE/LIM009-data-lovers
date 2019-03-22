@@ -5,7 +5,7 @@ const contactButton = document.getElementById("contact-menu-btn");
 const typeButton = document.getElementById("tipo-menu-btn");
 const yearButton = document.getElementById("año-menu-btn");
 const homeScreen = document.getElementById("home-screen");
-const aboutScreen = document.getElementById("about-us-screen");
+const statisticScreen = document.getElementById("statistic-screen");
 const contactScreen = document.getElementById("contact-us-screen");
 const typeScreen = document.getElementById("type-accident-screen");
 const yearScreen = document.getElementById("year-accident-screen");
@@ -16,7 +16,7 @@ const boatBtn = document.getElementById("boat");
 const seeDataBtn = document.getElementById("see-data");
 
 
-aboutScreen.style.display = "none";
+statisticScreen.style.display = "none";
 contactScreen.style.display = "none";
 typeScreen.style.display = "none";
 yearScreen.style.display = "none";
@@ -27,7 +27,7 @@ trainScreen.style.display = "none";
 
 homeButton.addEventListener("click", () => {
   homeScreen.style.display = "block";
-  aboutScreen.style.display = "none";
+  statisticScreen.style.display = "none";
   contactScreen.style.display = "none";
   typeScreen.style.display = "none";
   boatScreen.style.display = "none";
@@ -42,14 +42,14 @@ aboutButton.addEventListener("click", () => {
   yearScreen.style.display = "none";
   boatScreen.style.display = "none";
   trainScreen.style.display = "none";
-  aboutScreen.style.display = "block";
+  statisticScreen.style.display = "block";
 });
 
 contactButton.addEventListener("click", () => {
   homeScreen.style.display = "none";
   typeScreen.style.display = "none";
   yearScreen.style.display = "none";
-  aboutScreen.style.display = "none";
+  statisticScreen.style.display = "none";
   boatScreen.style.display = "none";
   trainScreen.style.display = "none";
   contactScreen.style.display = "block";
@@ -59,7 +59,7 @@ typeButton.addEventListener("click", () => {
   homeScreen.style.display = "none";
   contactScreen.style.display = "none";
   yearScreen.style.display = "none";
-  aboutScreen.style.display = "none";
+  statisticScreen.style.display = "none";
   boatScreen.style.display = "none";
   trainScreen.style.display = "none";
   typeScreen.style.display = "block";
@@ -69,7 +69,7 @@ yearButton.addEventListener("click", () => {
   homeScreen.style.display = "none";
   contactScreen.style.display = "none";
   typeScreen.style.display = "none";
-  aboutScreen.style.display = "none";
+  statisticScreen.style.display = "none";
   boatScreen.style.display = "none";
   trainScreen.style.display = "none";
   yearScreen.style.display = "block";
@@ -79,7 +79,7 @@ trainBtn.addEventListener("click", () => {
   homeScreen.style.display = "none";
   contactScreen.style.display = "none";
   typeScreen.style.display = "none";
-  aboutScreen.style.display = "none";
+  statisticScreen.style.display = "none";
   yearScreen.style.display = "none";
   boatScreen.style.display = "none";
   trainScreen.style.display = "block";
@@ -109,7 +109,7 @@ boatBtn.addEventListener("click", () => {
   homeScreen.style.display = "none";
   contactScreen.style.display = "none";
   typeScreen.style.display = "none";
-  aboutScreen.style.display = "none";
+  statisticScreen.style.display = "none";
   yearScreen.style.display = "none";
   trainScreen.style.display = "none";
   boatScreen.style.display = "block";
@@ -147,13 +147,15 @@ const pintarYear = (INJURIES,option) => {
     if(INJURIES[i].Year===option){
     string += `
           <div class="center-items">
-            <div class="box-type-year display-inline">
+            <div class="box-type-year display-inline space text-align-center ">
               <p>Trains</p>
+              </br>
               <p>Year: ${INJURIES[i].Year}</p>
               <p>#: ${INJURIES[i].Total_Injured_Persons_Recreational_Boating}</p>
             </div>
-            <div class="box-type-year display-inline">
+            <div class="box-type-year display-inline text-align-center ">
               <p>Boats</p>
+              </br>
               <p>Year: ${INJURIES[i].Year}</p>
               <p>#: ${INJURIES[i].Total_Injured_Persons_Train_Accidents_Rail_Roads}</p>
             </div>
