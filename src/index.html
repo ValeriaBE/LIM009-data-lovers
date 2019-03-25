@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Radley" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Radley|Sawarabi+Mincho" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=RadleySawarabi+Mincho" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 </head>
 
 <body>
@@ -23,7 +24,7 @@
         <h1 class="display-inline text-font color-white">Datature</h1>
       </div>
       <div class="search-container display-inline">
-        <form action="">
+        <form>
           <input class=" search position-absolute" type="search">
           <i class="fa position-absolute text-align-center fa-search"></i>
         </form>
@@ -47,29 +48,41 @@
           <li class="display-inline">
             <button id="contact-menu-btn" class="text-font-btn text-align-center">Contact us</button>
           </li>
-      </div>
-     </header>
-    <div id="home-screen">
-     <section>
-       <p>contenido home...</p>
-
-     </section>
+        </ul>
+      </nav>
     </div>
-    <div id="statistic-screen">
-     <section>
-        <p>contenido....</p>
-     </section>
-     </div>
-     <div id="contact-us-screen">
-     <section>
+  </header>
+  <div id="home-screen">
+    <section>
+      <p>contenido home...</p>
+
+    </section>
+  </div>
+  <div id="statistic-screen">
+    <section>
+      <p>contenido....</p>
+    </section>
+  </div>
+  <div id="contact-us-screen">
+    <section>
       <p>contenido contact...</p>
       <ul id="resultado"></ul>
     </section>
   </div>
   <div id="type-accident-screen" class="center-content">
-    <div class="center-items">
-      <button class="type-btns train" id="train">Trains</button>
-      <button class="type-btns boat" id="boat">Boats</button>
+    <div class="type-boxes">
+      <div class="box-types train-box">
+        <img src="img/location.png" alt="location" class="images display-inline">
+        <h1 class="title-type display-inline">TRAIN ACCIDENTS</h1>
+        <p class="definition">There have been a number of fatal commuter train crashes through the years. Here's a list of years and the number of injured people since 1960</p>
+          <button class="see-data-btn display-inline train-n-boats" id="train">Trains</button>
+      </div>
+      <div class="box-types">
+        <img src="img/sea.png" alt="sea" class="images display-inline">
+        <h1 class="title-type display-inline">BOAT ACCIDENTS</h1>
+        <p class="definition">There have been a number of fatal recreational boat accidents through the years. Here's a list of years and the number of injured people since 1960</p>
+          <button class="see-data-btn display-inline train-n-boats" id="boat">Boats</button>
+      </div>
     </div>
   </div>
   <div id="year-accident-screen" class="center-content">
