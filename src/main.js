@@ -1,4 +1,5 @@
 const searchData = window.INJURIES;
+
 const homeButton = document.getElementById("home-menu-btn");
 const aboutButton = document.getElementById("about-menu-btn");
 const contactButton = document.getElementById("contact-menu-btn");
@@ -25,7 +26,7 @@ contactScreen.style.display = "none";
 typeScreen.style.display = "none";
 yearScreen.style.display = "none";
 boatScreen.style.display = "none";
-trainScreen.style.display = "none";
+trainScreen.style.display = "block";
 
 
 
@@ -99,11 +100,18 @@ boatBtn.addEventListener("click", () => {
     trainScreen.style.display = "none";
     boatScreen.style.display = "block";
     document.getElementById("data-boats").innerHTML = window.showBoats(INJURIES);
+
 });
 seeDataBtn.addEventListener("click",()=>{
     const option=document.getElementById("Years").value;
+
+  result.innerHTML=window.showAccidentsByYear(INJURIES,option);
   result.innerHTML=window.showAccidentsByYear(INJURIES,option);
   });
+
+
+
+
 
 
 
@@ -137,3 +145,45 @@ const filtrar =()=>{
  boton.addEventListener('click',filtrar)
  formulario.addEventListener('keyup', filtrar)
  filtrar();
+
+ //ordenar Train
+ //How Program Starts by Default in Train Stats
+const newArrFiltered = window.roadEye.filtersYears(INJURIES);
+let newArr = window.roadEye.newArrTrainYear(newArrFiltered);
+newArr = window.roadEye.sortYearsOld(newArr);
+let tableHtmlTrain = document.querySelector('#tabla-train tbody');
+window.roadEye.fillTableTrain(tableHtmlTrain, newArr);
+
+
+
+
+
+let sortOldNew = () => {
+    const buttonOld = document.getElementById('descendiente');
+    buttonOld.onclick = function () {
+        event.preventDefault();
+        const newArrFiltered = window.roadEye.filtersYears(INJURIES);
+        let newArr = window.roadEye.newArrTrainYear(newArrFiltered);
+        newArr = window.roadEye.sortYearsOld(newArr);
+        let tableHtmlTrain = document.querySelector('#tabla-train tbody');
+        tableHtmlTrain.innerHTML = "";
+        window.roadEye.fillTableTrain(tableHtmlTrain, newArr);
+    };
+};
+
+let sortNewOld = () => {
+    const buttonNew = document.getElementById('ascendente');
+    buttonNew.onclick = function () {
+        event.preventDefault();
+        const newArrFiltered = window.roadEye.filtersYears(INJURIES);
+        let newArr = window.roadEye.newArrTrainYear(newArrFiltered);
+        newArr = window.roadEye.sortYearsNew(newArr);
+        let tableHtmlTrain = document.querySelector('#tabla-train tbody');
+        tableHtmlTrain.innerHTML = "";
+        window.roadEye.fillTableTrain(tableHtmlTrain, newArr);
+    };
+};
+
+document.getElementById('descendiente').addEventListener('click', sortOldNew);
+document.getElementById('ascendente').addEventListener('click', sortNewOld);
+//ordenar Boating
