@@ -5,6 +5,10 @@ const showBoats=(array)=>{
   }
   return newarrayBoats;
 };
+
+// const showBoats = INJURIES.map(function(i) {
+//   return i.Year + " " + i.Total_Injured_Persons_Recreational_Boating;
+// });
 window.showBoats=showBoats;
 
 let newarrayTrains=[];

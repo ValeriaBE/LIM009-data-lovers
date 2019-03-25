@@ -26,11 +26,12 @@ trainScreen.style.display = "none";
 
 
 homeButton.addEventListener("click", () => {
-  homeScreen.style.display = "block";
+  homeScreen.style.display = "flex";
   statisticScreen.style.display = "none";
   contactScreen.style.display = "none";
   typeScreen.style.display = "none";
   boatScreen.style.display = "none";
+  yearScreen.style.display="none";
   trainScreen.style.display = "none";
 
 });
