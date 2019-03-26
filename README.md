@@ -1,3 +1,23 @@
+# Datature
+
+## Historias de Usuarios
+
+* 
+*
+*
+*
+*
+
+### Diseño de la Interfaz de Usuario
+
+#### Prototipo de baja fidelidad
+![screen-1](https://i.ibb.co/4T5bL4w/Presentacio-n-sin-ti-tulo.png)
+
+#### Prototipo de alta fidelidad
+![figma-1](https://i.ibb.co/M5yzfpP/7.png)
+![figma-2](https://i.ibb.co/wM3tHzd/8.png)
+![figma-3](https://i.ibb.co/6WMhBtF/9.png)
+
 # Data Lovers
 
 ## Índice

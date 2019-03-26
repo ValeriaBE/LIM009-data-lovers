@@ -1,4 +1,3 @@
-const searchData = window.INJURIES;
 
 const homeButton = document.getElementById("home-menu-btn");
 const aboutButton = document.getElementById("about-menu-btn");
@@ -6,184 +5,162 @@ const contactButton = document.getElementById("contact-menu-btn");
 const typeButton = document.getElementById("tipo-menu-btn");
 const yearButton = document.getElementById("año-menu-btn");
 const homeScreen = document.getElementById("home-screen");
-const aboutScreen = document.getElementById("about-us-screen");
+const statisticScreen = document.getElementById("statistic-screen");
 const contactScreen = document.getElementById("contact-us-screen");
 const typeScreen = document.getElementById("type-accident-screen");
 const yearScreen = document.getElementById("year-accident-screen");
-const trainScreen=document.getElementById("train-screen");
-const trainBtn=document.getElementById("train");
-const boatScreen=document.getElementById("boat-screen");
-const boatBtn=document.getElementById("boat");
-const result=document.getElementById("result");
-const selectOption=document.getElementById("Years");
-const seeDataBtn =document.getElementById("see-data");
-const formulario=document.querySelector("#formulario");
-const boton =document.querySelector("#boton");
-const resultado=document.querySelector("#resultado");
+const trainScreen = document.getElementById("train-screen");
+const trainBtn = document.getElementById("train");
+const boatScreen = document.getElementById("boat-screen");
+const boatBtn = document.getElementById("boat");
+const seeDataBtn = document.getElementById("see-data");
 
-aboutScreen.style.display = "none";
+
+statisticScreen.style.display = "none";
 contactScreen.style.display = "none";
 typeScreen.style.display = "none";
 yearScreen.style.display = "none";
 boatScreen.style.display = "none";
-trainScreen.style.display = "block";
+trainScreen.style.display = "none";
 
 
 
 homeButton.addEventListener("click", () => {
-    homeScreen.style.display = "block";
-    aboutScreen.style.display = "none";
-    contactScreen.style.display = "none";
-    typeScreen.style.display = "none";
-    boatScreen.style.display = "none";
-    trainScreen.style.display = "none";
+  homeScreen.style.display = "block";
+  statisticScreen.style.display = "none";
+  contactScreen.style.display = "none";
+  typeScreen.style.display = "none";
+  boatScreen.style.display = "none";
+  trainScreen.style.display = "none";
 
 });
 
 aboutButton.addEventListener("click", () => {
-    homeScreen.style.display = "none";
-    contactScreen.style.display = "none";
-    typeScreen.style.display = "none";
-    yearScreen.style.display = "none";
-    boatScreen.style.display = "none";
-    trainScreen.style.display = "none";
-    aboutScreen.style.display = "block";
+  homeScreen.style.display = "none";
+  contactScreen.style.display = "none";
+  typeScreen.style.display = "none";
+  yearScreen.style.display = "none";
+  boatScreen.style.display = "none";
+  trainScreen.style.display = "none";
+  statisticScreen.style.display = "block";
 });
 
 contactButton.addEventListener("click", () => {
-    homeScreen.style.display = "none";
-    typeScreen.style.display = "none";
-    yearScreen.style.display = "none";
-    aboutScreen.style.display = "none";
-    boatScreen.style.display = "none";
-    trainScreen.style.display = "none";
-    contactScreen.style.display = "block";
+  homeScreen.style.display = "none";
+  typeScreen.style.display = "none";
+  yearScreen.style.display = "none";
+  statisticScreen.style.display = "none";
+  boatScreen.style.display = "none";
+  trainScreen.style.display = "none";
+  contactScreen.style.display = "block";
 });
 
 typeButton.addEventListener("click", () => {
-    homeScreen.style.display = "none";
-    contactScreen.style.display = "none";
-    yearScreen.style.display = "none";
-    aboutScreen.style.display = "none";
-    boatScreen.style.display = "none";
-    trainScreen.style.display = "none";
-    typeScreen.style.display = "block";
+  homeScreen.style.display = "none";
+  contactScreen.style.display = "none";
+  yearScreen.style.display = "none";
+  statisticScreen.style.display = "none";
+  boatScreen.style.display = "none";
+  trainScreen.style.display = "none";
+  typeScreen.style.display = "block";
 });
 
 yearButton.addEventListener("click", () => {
-    homeScreen.style.display = "none";
-    contactScreen.style.display = "none";
-    typeScreen.style.display = "none";
-    aboutScreen.style.display = "none";
-    boatScreen.style.display = "none";
-    trainScreen.style.display = "none";
-    yearScreen.style.display = "block";
+  homeScreen.style.display = "none";
+  contactScreen.style.display = "none";
+  typeScreen.style.display = "none";
+  statisticScreen.style.display = "none";
+  boatScreen.style.display = "none";
+  trainScreen.style.display = "none";
+  yearScreen.style.display = "block";
 });
 
 trainBtn.addEventListener("click", () => {
-    homeScreen.style.display = "none";
-    contactScreen.style.display = "none";
-    typeScreen.style.display = "none";
-    aboutScreen.style.display = "none";
-    yearScreen.style.display = "none";
-    boatScreen.style.display = "none";
-    trainScreen.style.display = "block";
-    document.getElementById("data-train").innerHTML = window.trains(INJURIES);
+  homeScreen.style.display = "none";
+  contactScreen.style.display = "none";
+  typeScreen.style.display = "none";
+  statisticScreen.style.display = "none";
+  yearScreen.style.display = "none";
+  boatScreen.style.display = "none";
+  trainScreen.style.display = "block";
+  pintarTrain(arrInjuredPeople);
 });
+//pintando data
+const containerTrain = document.getElementById("data-train");
+const arrInjuredPeople = INJURIES;
+const pintarTrain = (INJURIES) => {
+  let string = "";
+  for (let i = 0; i < INJURIES.length; i++) {
+    string += ` 
+        <div class="row display-inline-block">
+          <div class="column">
+            <div class="boxes-design-type display-inline-block">
+            <p>Year: ${INJURIES[i].Year}</p>
+            <p>#: ${INJURIES[i].Total_Injured_Persons_Train_Accidents_Rail_Roads}</p>
+            </div>
+          </div>
+        </div>`
+  }
+  containerTrain.innerHTML = string;
+};
+
 
 boatBtn.addEventListener("click", () => {
-    homeScreen.style.display = "none";
-    contactScreen.style.display = "none";
-    typeScreen.style.display = "none";
-    aboutScreen.style.display = "none";
-    yearScreen.style.display = "none";
-    trainScreen.style.display = "none";
-    boatScreen.style.display = "block";
-    document.getElementById("data-boats").innerHTML = window.showBoats(INJURIES);
-
+  homeScreen.style.display = "none";
+  contactScreen.style.display = "none";
+  typeScreen.style.display = "none";
+  statisticScreen.style.display = "none";
+  yearScreen.style.display = "none";
+  trainScreen.style.display = "none";
+  boatScreen.style.display = "block";
+  pintarBoat(arrInjuredPeopleBoat);
 });
-seeDataBtn.addEventListener("click",()=>{
-    const option=document.getElementById("Years").value;
 
-  result.innerHTML=window.showAccidentsByYear(INJURIES,option);
-  result.innerHTML=window.showAccidentsByYear(INJURIES,option);
-  });
-
-
-
-
-
-
-
-  //search interno
-  const contenidos=[
-    {nombre:'Valeria'},
-    {nombre:'Rocio'},
-    {nombre:'recreational'},
-    {nombre:'injuries'},
-    {nombre:'train'},
-]
-const filtrar =()=>{
-    // console.log(formulario.value);
-    resultado.innerHTML='';
-    const texto=formulario.value.toLowerCase();
-    for(let contenido of contenidos ){
-        let nombre=contenido.nombre.toLowerCase();
-        if(nombre.indexOf(texto)!==-1){
-            resultado.innerHTML +=`
-            <li>${contenido.nombre}</li>
-            `
-        }
-    }
-    if( resultado.innerHTML === ''){
-       resultado.innerHTML +=`
-            <li>contenido no encontrado...</li>
-            `
-    }
-
- }
- boton.addEventListener('click',filtrar)
- formulario.addEventListener('keyup', filtrar)
- filtrar();
-
- //ordenar Train
- //How Program Starts by Default in Train Stats
-const newArrFiltered = window.roadEye.filtersYears(INJURIES);
-let newArr = window.roadEye.newArrTrainYear(newArrFiltered);
-newArr = window.roadEye.sortYearsOld(newArr);
-let tableHtmlTrain = document.querySelector('#tabla-train tbody');
-window.roadEye.fillTableTrain(tableHtmlTrain, newArr);
-
-
-
-
-
-let sortOldNew = () => {
-    const buttonOld = document.getElementById('descendiente');
-    buttonOld.onclick = function () {
-        event.preventDefault();
-        const newArrFiltered = window.roadEye.filtersYears(INJURIES);
-        let newArr = window.roadEye.newArrTrainYear(newArrFiltered);
-        newArr = window.roadEye.sortYearsOld(newArr);
-        let tableHtmlTrain = document.querySelector('#tabla-train tbody');
-        tableHtmlTrain.innerHTML = "";
-        window.roadEye.fillTableTrain(tableHtmlTrain, newArr);
-    };
+const containerBoat = document.getElementById("data-boats");
+const arrInjuredPeopleBoat = INJURIES;
+const pintarBoat = (INJURIES) => {
+  let string = "";
+  for (let i = 0; i < INJURIES.length; i++) {
+    string += `
+        <div class="row display-inline-block">
+          <div class="column">
+            <div class="boxes-design-type display-inline-block">
+            <p>Year: ${INJURIES[i].Year}</p>
+            <p>#: ${INJURIES[i].Total_Injured_Persons_Recreational_Boating}</p>
+            </div>
+          </div>
+        </div>`
+  }
+  containerBoat.innerHTML = string;
 };
 
-let sortNewOld = () => {
-    const buttonNew = document.getElementById('ascendente');
-    buttonNew.onclick = function () {
-        event.preventDefault();
-        const newArrFiltered = window.roadEye.filtersYears(INJURIES);
-        let newArr = window.roadEye.newArrTrainYear(newArrFiltered);
-        newArr = window.roadEye.sortYearsNew(newArr);
-        let tableHtmlTrain = document.querySelector('#tabla-train tbody');
-        tableHtmlTrain.innerHTML = "";
-        window.roadEye.fillTableTrain(tableHtmlTrain, newArr);
-    };
-};
+seeDataBtn.addEventListener("click", () => {
+  const option = document.getElementById("Years").value;
+  pintarYear(arrYearInjuredpeople,option);
+});
 
-document.getElementById('descendiente').addEventListener('click', sortOldNew);
-document.getElementById('ascendente').addEventListener('click', sortNewOld);
-//ordenar Boating
+const yearData = document.getElementById("year-data");
+const arrYearInjuredpeople = INJURIES;
+const pintarYear = (INJURIES,option) => {
+  let string = "";
+  for (let i = 0; i < INJURIES.length; i++) {
+    if(INJURIES[i].Year===option){
+    string += `
+          <div class="center-items">
+            <div class="box-type-year display-inline space text-align-center ">
+              <p>Trains</p>
+              </br>
+              <p>Year: ${INJURIES[i].Year}</p>
+              <p>#: ${INJURIES[i].Total_Injured_Persons_Recreational_Boating}</p>
+            </div>
+            <div class="box-type-year display-inline text-align-center ">
+              <p>Boats</p>
+              </br>
+              <p>Year: ${INJURIES[i].Year}</p>
+              <p>#: ${INJURIES[i].Total_Injured_Persons_Train_Accidents_Rail_Roads}</p>
+            </div>
+          </div>`
+    }
+  }
+  yearData.innerHTML = string;
+};

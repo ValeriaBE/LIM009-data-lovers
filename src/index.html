@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Radley" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Radley|Sawarabi+Mincho" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=RadleySawarabi+Mincho" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 </head>
 
 <body>
@@ -23,12 +24,9 @@
         <h1 class="display-inline text-font color-white">Datature</h1>
       </div>
       <div class="search-container display-inline">
-        <form action="">
-
-          <!-- <button class="btn btn-info mb-2" id="boton">Buscar</button> -->
-          <input type="text" id="formulario"class="position-absolute" >
-          <i id="boton" class="fa position-absolute text-align-center fa-search"></i>
-
+        <form>
+          <input class=" search position-absolute" type="search">
+          <i class="fa position-absolute text-align-center fa-search"></i>
         </form>
       </div>
     </div>
@@ -45,70 +43,51 @@
             <button id="año-menu-btn" class="text-font-btn text-align-center">Year of accident</button>
           </li>
           <li class="display-inline">
-            <button id="about-menu-btn" class="text-font-btn text-align-center">About us</button>
+            <button id="about-menu-btn" class="text-font-btn text-align-center">Stats</button>
           </li>
           <li class="display-inline">
             <button id="contact-menu-btn" class="text-font-btn text-align-center">Contact us</button>
           </li>
-      </div>
-     </header>
-    <div id="home-screen">
-     <section>
-       <p>contenido home...</p>
-
-     </section>
+        </ul>
+      </nav>
     </div>
-    <div id="about-us-screen">
-     <section>
-      <p >Datos Cronológicos</p>
+  </header>
+  <div id="home-screen">
+    <section>
+      <p>contenido home...</p>
 
-      <section >
-          <div >
-         <button  id="descendiente">  Descendiente </button>
-        <button  id="ascendente"  > Ascendente </button>
-       <table id="tabla-train" >
-       <thead>
-        <tr>
-          <th>Año</th>
-           <th>Número de heridos</th>
-         </tr>
-         </thead>
-          <tbody>
-
-         </tbody>
-         </table>
-          </div>
-      </section>
-
-<!-- Recreational -->
-
-  
-     <div id="contact-us-screen">
-     <section>
+    </section>
+  </div>
+  <div id="statistic-screen">
+    <section>
+      <p>contenido....</p>
+    </section>
+  </div>
+  <div id="contact-us-screen">
+    <section>
       <p>contenido contact...</p>
-
       <ul id="resultado"></ul>
     </section>
   </div>
   <div id="type-accident-screen" class="center-content">
-    <div class="center-items">
-      <button class="type-btns train" id="train">Trains</button>
-
-      <button class="type-btns boat" id="boat">Boats</button>
-
+    <div class="type-boxes">
+      <div class="box-types train-box">
+        <img src="img/location.png" alt="location" class="images display-inline">
+        <h1 class="title-type display-inline">TRAIN ACCIDENTS</h1>
+        <p class="definition">There have been a number of fatal commuter train crashes through the years. Here's a list of years and the number of injured people since 1960</p>
+          <button class="see-data-btn display-inline train-n-boats" id="train">Trains</button>
+      </div>
+      <div class="box-types">
+        <img src="img/sea.png" alt="sea" class="images display-inline">
+        <h1 class="title-type display-inline">BOAT ACCIDENTS</h1>
+        <p class="definition">There have been a number of fatal recreational boat accidents through the years. Here's a list of years and the number of injured people since 1960</p>
+          <button class="see-data-btn display-inline train-n-boats" id="boat">Boats</button>
+      </div>
     </div>
-
-
-
- </section>
- </div>
- <div id="contact-us-screen">
- <section>
   </div>
-  <div id="year-accident-screen">
-    <section>
-      <h3>Search by year</h3>
-      <select id="Years">
+  <div id="year-accident-screen" class="center-content">
+    <section class="center-content">
+      <select id="Years" class="year-dropdown-box">
         <option> YEAR </option>
         <option value="1960-01-04">1960</option>
         <option value="1965-01-04">1965</option>
@@ -142,15 +121,15 @@
         <option value="2015-01-04">2015</option>
         <option value="2016-01-04">2016</option>
       </select>
-      <button id="see-data">SEE DATA</button>
-      <div id="result"></div>
+      <button id="see-data" class="see-data-btn">SEE DATA</button>
+      <div id="year-data"></div>
     </section>
   </div>
   <div id="train-screen">
-    <p id="data-train"></p>
+    <div id="data-train"></div>
   </div>
   <div id="boat-screen">
-    <p id="data-boats"></p>
+    <div id="data-boats"></div>
   </div>
   <!--<footer class="position-absolute text-align-center">
     <div class="social-icon color-white">
