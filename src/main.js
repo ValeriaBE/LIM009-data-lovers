@@ -86,7 +86,7 @@ trainBtn.addEventListener("click", () => {
   trainScreen.style.display = "block";
   pintarTrain(arrInjuredPeople);
 });
-
+//pintando data
 const containerTrain = document.getElementById("data-train");
 const arrInjuredPeople = INJURIES;
 const pintarTrain = (INJURIES) => {
@@ -165,4 +165,3 @@ const pintarYear = (INJURIES,option) => {
   }
   yearData.innerHTML = string;
 };
-
