@@ -87,7 +87,7 @@ trainBtn.addEventListener("click", () => {
   trainScreen.style.display = "block";
   pintarTrain(arrInjuredPeople);
 });
-
+//pintando data
 const containerTrain = document.getElementById("data-train");
 const arrInjuredPeople = INJURIES;
 const pintarTrain = (arrInjuredPeople) => {
@@ -108,9 +108,9 @@ const pintarTrain = (arrInjuredPeople) => {
 
 sortBtnTrain.addEventListener("click", ()=>{
   arrInjuredPeople.sort(function(a,b){
-    var x=a.Total_Injured_Persons_Train_Accidents_Rail_Roads;
-    var y=b.Total_Injured_Persons_Train_Accidents_Rail_Roads;
-    return x>y?-1:x<y?1:0;
+    let z=a.Year;
+    let f=b.Year;
+    return z>f?-1:z<f?1:0;
   });
   pintarTrain(arrInjuredPeople)
 })
@@ -146,8 +146,8 @@ const pintarBoat = (arrInjuredPeopleBoat) => {
 
 sortBtnBoat.addEventListener("click", ()=>{
   arrInjuredPeopleBoat.sort(function(a,b){
-    var x=a.Year;
-    var y=b.Year;
+    let x=a.Total_Injured_Persons_Recreational_Boating;
+    let y=b.Total_Injured_Persons_Recreational_Boating;
     return x>y?-1:x<y?1:0;
   });
   pintarBoat(arrInjuredPeopleBoat);
@@ -182,5 +182,4 @@ const pintarYear = (INJURIES,option) => {
     }
   }
   yearData.innerHTML = string;
-};
-
+}
