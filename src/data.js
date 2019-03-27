@@ -32,7 +32,7 @@ window.showAccidentsByYear=showAccidentsByYear;
 
 //ORDENAMIENTO SORT LULÚ
 //función ascendente y descendente
-/*function sortNumbers(a,b){
+function sortNumbers(a,b){
   a=a.Total_Injured_Persons_Train_Accidents_Rail_Roads;
   b=b.Total_Injured_Persons_Train_Accidents_Rail_Roads;
  
@@ -50,7 +50,7 @@ console.log('arreglo ascendente');
 console.log(newarrayTrains.sort(sortNumbers));
 console.log('arreglo descendente');
 console.log(newarrayTrains.sort(sortNumbers).reverse());
-*/
+
 
 
 
