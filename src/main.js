@@ -85,20 +85,20 @@ trainBtn.addEventListener("click", () => {
   yearScreen.style.display = "none";
   boatScreen.style.display = "none";
   trainScreen.style.display = "block";
-  pintarTrain(arrInjuredPeople);
+  pintarTrain(showArrTrain(INJURIES));
 });
 //pintando data
 const containerTrain = document.getElementById("data-train");
-const arrInjuredPeople = INJURIES;
-const pintarTrain = (arrInjuredPeople) => {
+
+const pintarTrain = (data) => {
   let string = "";
-  for (let i = 0; i < arrInjuredPeople.length; i++) {
+  for (let i = 0; i < data.length; i++) {
     string += ` 
         <div class="row display-inline-block">
           <div class="column">
             <div class="boxes-design-type display-inline-block">
-            <p>Year: ${arrInjuredPeople[i].Year}</p>
-            <p>#: ${arrInjuredPeople[i].Total_Injured_Persons_Train_Accidents_Rail_Roads}</p>
+            <p>Year: ${data[i].Year}</p>
+            <p>#: ${data[i].accidentstrain}</p>
             </div>
           </div>
         </div>`
@@ -123,20 +123,19 @@ boatBtn.addEventListener("click", () => {
   yearScreen.style.display = "none";
   trainScreen.style.display = "none";
   boatScreen.style.display = "block";
-  pintarBoat(arrInjuredPeopleBoat);
+  pintarBoat(showArrBoat(INJURIES));
 });
 
 const containerBoat = document.getElementById("data-boats");
-const arrInjuredPeopleBoat = INJURIES;
-const pintarBoat = (arrInjuredPeopleBoat) => {
+const pintarBoat = (data) => {
   let string = "";
-  for (let i = 0; i < arrInjuredPeopleBoat.length; i++) {
-    string += `
+  for (let i = 0; i < data.length; i++) {
+    string += ` 
         <div class="row display-inline-block">
           <div class="column">
             <div class="boxes-design-type display-inline-block">
-            <p>Year: ${arrInjuredPeopleBoat[i].Year}</p>
-            <p>#: ${arrInjuredPeopleBoat[i].Total_Injured_Persons_Recreational_Boating}</p>
+            <p>Year: ${data[i].Year}</p>
+            <p>#: ${data[i].accidentsboat}</p>
             </div>
           </div>
         </div>`
@@ -155,31 +154,30 @@ sortBtnBoat.addEventListener("click", ()=>{
 
 seeDataBtn.addEventListener("click", () => {
   const option = document.getElementById("Years").value;
-  pintarYear(arrYearInjuredpeople,option);
+  pintarYear(filterData(INJURIES,option));
 });
 
 const yearData = document.getElementById("year-data");
-const arrYearInjuredpeople = INJURIES;
-const pintarYear = (INJURIES,option) => {
+const pintarYear = (data) => {
   let string = "";
-  for (let i = 0; i < INJURIES.length; i++) {
-    if(INJURIES[i].Year===option){
+  for (let i = 0; i < data.length; i++) {
     string += `
           <div class="center-items">
             <div class="box-type-year display-inline space text-align-center ">
               <p>Trains</p>
               </br>
-              <p>Year: ${INJURIES[i].Year}</p>
-              <p>#: ${INJURIES[i].Total_Injured_Persons_Recreational_Boating}</p>
+              <p>Year: ${data[i].Year}</p>
+              <p>#: ${data[i].Boats}</p>
             </div>
             <div class="box-type-year display-inline text-align-center ">
               <p>Boats</p>
               </br>
-              <p>Year: ${INJURIES[i].Year}</p>
-              <p>#: ${INJURIES[i].Total_Injured_Persons_Train_Accidents_Rail_Roads}</p>
+              <p>Year: ${data[i].Year}</p>
+              <p>#: ${data[i].Trains}</p>
             </div>
           </div>`
     }
+    yearData.innerHTML = string;
   }
-  yearData.innerHTML = string;
-}
+  
+
