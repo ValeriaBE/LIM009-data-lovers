@@ -27,7 +27,7 @@ trainScreen.style.display = "none";
 
 
 homeButton.addEventListener("click", () => {
-  homeScreen.style.display = "flex";
+  homeScreen.style.display = "block";
   statisticScreen.style.display = "none";
   contactScreen.style.display = "none";
   typeScreen.style.display = "none";
@@ -180,4 +180,13 @@ const pintarYear = (data) => {
     yearData.innerHTML = string;
   }
   
-
+const maxbtn=document.getElementById("max");
+maxbtn.addEventListener("click",()=>{
+  pintarMax(computeStats(INJURIES));
+})
+const stats=document.getElementById("stats");
+const pintarMax=(maximo)=>{
+  let string="";
+    string += ` ${maximo}`
+stats.innerHTML=string;
+}
