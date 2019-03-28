@@ -7,6 +7,13 @@
   },
   "extends": "eslint:recommended",
   "globals": {
-    "example": false
+    "example": false,
+    "showArrBoat" :false,
+    "showArrTrain":false,
+    "filterData":false,
+    "sortData":false,
+    "computeStats":false,
+    "computeSumaTrains":false,
+    "INJURIES":false
   }
 }

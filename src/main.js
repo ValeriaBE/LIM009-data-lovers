@@ -1,4 +1,3 @@
-
 const homeButton = document.getElementById("home-menu-btn");
 const aboutButton = document.getElementById("about-menu-btn");
 const typeButton = document.getElementById("tipo-menu-btn");
@@ -21,8 +20,6 @@ yearScreen.style.display = "none";
 boatScreen.style.display = "none";
 trainScreen.style.display = "none";
 
-
-
 homeButton.addEventListener("click", () => {
   homeScreen.style.display = "block";
   statisticScreen.style.display = "none";
@@ -41,7 +38,6 @@ aboutButton.addEventListener("click", () => {
   trainScreen.style.display = "none";
   statisticScreen.style.display = "block";
 });
-
 
 typeButton.addEventListener("click", () => {
   homeScreen.style.display = "none";
@@ -89,7 +85,6 @@ const pintarTrain = (data) => {
   containerTrain.innerHTML = string;
 };
 
-
 boatBtn.addEventListener("click", () => {
   homeScreen.style.display = "none";
   typeScreen.style.display = "none";
@@ -116,13 +111,15 @@ const pintarBoat = (data) => {
   }
   containerBoat.innerHTML = string;
 };
+
 sortBtnTrain.addEventListener("click", () => {
   pintarTrain((sortData(showArrTrain(INJURIES),"Year","D")));
-})
+});
 
 sortBtnBoat.addEventListener("click", () => {
   pintarBoat((sortData(showArrBoat(INJURIES),"accidentsboat","D")));
-})
+});
+
 const yearData = document.getElementById("year-data");
 const pintarYear = (data) => {
   let string = "";
@@ -144,13 +141,12 @@ const pintarYear = (data) => {
           </div>`
   }
   yearData.innerHTML = string;
-}
+};
 
 seeDataBtn.addEventListener("click", () => {
   const option = document.getElementById("Years").value;
   pintarYear(filterData(INJURIES, option));
 });
-
 
 //pintando máximo boating
 const maxbtn = document.getElementById("max");
@@ -167,25 +163,25 @@ const pintarMax = (maximo) => {
       </div>
     </div>`
   stats.innerHTML = string;
-}
+};
 
 //pintando máximo Trains
 const maxbtnTrains = document.getElementById("maxTrains");
 maxbtnTrains.addEventListener("click", () => {
   pintarMax(computeStats(INJURIES, "Total_Injured_Persons_Train_Accidents_Rail_Roads"));
-})
+});
 
 //pintando suma total Trains
 const sumabtnTrains = document.getElementById("sumaTrains");
 sumabtnTrains.addEventListener("click", () => {
   pintarMax(computeSumaTrains(INJURIES, "Total_Injured_Persons_Train_Accidents_Rail_Roads"));
-})
+});
 
 //pintando suma total Boating
 const sumabtnBoat = document.getElementById("sumaBoat");
 sumabtnBoat.addEventListener("click", () => {
   pintarMax(computeSumaTrains(INJURIES, "Total_Injured_Persons_Recreational_Boating"));
-})
+});
 
 
 
