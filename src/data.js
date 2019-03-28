@@ -8,6 +8,7 @@ const showArrTrain = (data)=>{
     })
   }
   return newdatat;
+  // console.log(newdatat);
 }
 window.showArrTrain=showArrTrain;
 
@@ -20,6 +21,7 @@ const showArrBoat = (data)=>{
     })
   }
   return newdatab;
+  // console.log(newdatab);
 }
 window.showArrBoat=showArrBoat;
 
@@ -99,42 +101,3 @@ const computeSumaBoat=(INJURIES)=>{
 
   
 //
-const computeStatsPorcent=(INJURIES)=>{
-  let newarrayTrain= [{quantity :0},{quantity :0},{quantity :0},{quantity :0},{quantity :665},{quantity :476}
-    ,{quantity :451},{quantity :326},{quantity :171},{quantity :308},{quantity :262},{quantity :294},{quantity :281}
-    ,{quantity :183},{quantity :129},{quantity :130},{quantity :275},{quantity :310},{quantity :1884},{quantity :232}
-    ,{quantity :346},{quantity :787},{quantity :220},{quantity :309},{quantity :321},{quantity :127},{quantity :110}
-    ,{quantity :217},{quantity :462},{quantity :328},{quantity :139},{quantity :558},{quantity :284}];
-  
-  let totalLocation = 0;
-  newarrayTrain.forEach(element => {
-   
-    totalLocation += element.quantity;
-  })
-  newarrayTrain.forEach(element => {
-    let porcen= element.quantity * 100 / totalLocation;
-    return porcen;
-    // console.log( porcen);
-  //  console.log( element.quantity * 100 / totalLocation)
-  })
-}
-window.computeStatsPorcent=computeStatsPorcent;
-
-//
-
-//ORDENAMIENTO SORT LULÚ
-//función ascendente y descendente
-
-
-const showArrTrai = (data)=>{ 
-  let newdata=[];
-  for(let i=0;i<data.length;i++){
-    newdata.push({
-      'Year':data[i].Year,
-      'accidentstrain': data[i]['Total_Injured_Persons_Train_Accidents_Rail_Roads']
-    })
-  }
-  return newdata;
-}
-console.log(newdata);
-// window.showArrTrai=showArrTrai;

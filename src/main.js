@@ -256,22 +256,9 @@ const sumabtnBoat=document.getElementById("sumaBoat");
  stats.innerHTML=string;
  }
 
- //pintando porcentaje trains
 
- const btnboat=document.getElementById("btnPorcent");
- btnPorcent.addEventListener("click",()=>{
-   pintarPorcent(computeStatsPorcent());
- })
- const statsPorcent=document.getElementById("PorcentTrains");
- const pintarPorcent=(porcen)=>{
-   let string="";
-     string += ` 
-     <div class="box-type-year display-inline space text-align-center ">
-     <div class="boxes-design display-inline-block">
-    <span> ${porcen}</span>
-    </div>
-     </div>`
- stats.innerHTML=string;
- }
+
+ 
+ 
 
 
