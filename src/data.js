@@ -38,32 +38,60 @@ const filterData = (data, condition) => {
 }
 window.filterData = filterData;
 
-const sortData = (data, sortBy, sortOrder) => {
-  const orderedArr = data.sort=(a,b)=>{
-    if(a[sortBy]> b[sortBy]){
-      return 1;
-    }else if (a[sortBy] <b [sortBy]) {
-      return -1;
-    } else if (a[sortBy] === b[sortBy]) {
-      return 0;
-    }
-  };
-  if(sortOrder == "A"){
-    return orderedArr;
-  } else if(sortOrder=="D"){
-    return orderedArr.reverse();
+const sortData = (a,b) => {
+  a=a.Year;
+  b=b.Year;
+  if(a<b){
+    return 1;
+  }else if(a>b){
+    return -1;
+  }else if(a===b){
+    return 0;
   }
 }
-window.sortData=sortData;
+window.sortData = sortData;
 
-const computeStats = (data) => {
+const sortNumber = (a,b) => {
+  a=a.accidentsboat;
+  b=b.accidentsboat;
+  if(a<b){
+    return 1;
+  }else if(a>b){
+    return -1;
+  }else if(a===b){
+    return 0;
+  }
+}
+
+window.sortNumber = sortNumber;
+
+//HALLANDO EL MÁXIMO Y/O MÍNIMO DEL NÚMERO DE ACCIDENTES EN TRAINS
+//Cálculo del máximo de boat
+
+const computeStats = (data,statsBy) => {
   let maximoBoats = 0;
   for (let i = 0; i < data.length; i++) {
-    if (maximoBoats < data[i].Total_Injured_Persons_Recreational_Boating) {
-      maximoBoats = data[i].Total_Injured_Persons_Recreational_Boating;
+    if (maximoBoats < data[i][statsBy]) {
+      maximoBoats = data[i][statsBy];
     }
   }
   return [maximoBoats];
 }
-window.computeStats = computeStats;
+window.computeStats = computeStats;//4612
+
+//Suma de personas accidentadas por Trains en EEUU
+const computeSumaTrains = (INJURIES, sumaBy) => {
+  let sumaTrains = 0;
+  for (let i = 0; i < INJURIES.length; i++) {
+    sumaTrains += INJURIES[i][sumaBy];
+  }
+  return sumaTrains;
+}
+window.computeSumaTrains = computeSumaTrains;//10585
+
+
+
+
+
+
 
