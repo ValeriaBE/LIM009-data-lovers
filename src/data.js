@@ -38,32 +38,24 @@ const filterData = (data, condition) => {
 }
 window.filterData = filterData;
 
-const sortData = (a,b) => {
-  a=a.Year;
-  b=b.Year;
-  if(a<b){
+const sortData=(data,sortBy,sortOrder)=>{
+const listordered=data.sort(function(a,b){
+  if(a[sortBy]>b[sortBy]){
     return 1;
-  }else if(a>b){
+  }else if(a[sortBy]<b[sortBy]){
     return -1;
-  }else if(a===b){
+  }else if(a[sortBy]===b[sortBy]){
     return 0;
   }
+});
+if(sortOrder=="A"){
+  return listordered;
+}else if(sortOrder=="D"){
+  return (listordered.reverse());
 }
-window.sortData = sortData;
-
-const sortNumber = (a,b) => {
-  a=a.accidentsboat;
-  b=b.accidentsboat;
-  if(a<b){
-    return 1;
-  }else if(a>b){
-    return -1;
-  }else if(a===b){
-    return 0;
-  }
 }
+window.sortData=sortData;
 
-window.sortNumber = sortNumber;
 
 //HALLANDO EL MÁXIMO Y/O MÍNIMO DEL NÚMERO DE ACCIDENTES EN TRAINS
 //Cálculo del máximo de boat

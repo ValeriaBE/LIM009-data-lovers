@@ -116,12 +116,12 @@ const pintarBoat = (data) => {
   }
   containerBoat.innerHTML = string;
 };
-sortBtnTrain.addEventListener("click", ()=>{
-  pintarTrain(showArrTrain(INJURIES).sort(sortData));
+sortBtnTrain.addEventListener("click", () => {
+  pintarTrain((sortData(showArrTrain(INJURIES),"Year","D")));
 })
 
-sortBtnBoat.addEventListener("click", ()=>{
-  pintarBoat(showArrBoat(INJURIES).sort(sortNumber));
+sortBtnBoat.addEventListener("click", () => {
+  pintarBoat((sortData(showArrBoat(INJURIES),"accidentsboat","D")));
 })
 const yearData = document.getElementById("year-data");
 const pintarYear = (data) => {
@@ -155,7 +155,7 @@ seeDataBtn.addEventListener("click", () => {
 //pintando máximo boating
 const maxbtn = document.getElementById("max");
 maxbtn.addEventListener("click", () => {
-  pintarMax(computeStats(INJURIES,"Total_Injured_Persons_Recreational_Boating"));
+  pintarMax(computeStats(INJURIES, "Total_Injured_Persons_Recreational_Boating"));
 });
 const stats = document.getElementById("stats");
 const pintarMax = (maximo) => {
@@ -172,19 +172,19 @@ const pintarMax = (maximo) => {
 //pintando máximo Trains
 const maxbtnTrains = document.getElementById("maxTrains");
 maxbtnTrains.addEventListener("click", () => {
-  pintarMax(computeStats(INJURIES,"Total_Injured_Persons_Train_Accidents_Rail_Roads"));
+  pintarMax(computeStats(INJURIES, "Total_Injured_Persons_Train_Accidents_Rail_Roads"));
 })
 
 //pintando suma total Trains
 const sumabtnTrains = document.getElementById("sumaTrains");
 sumabtnTrains.addEventListener("click", () => {
-  pintarMax(computeSumaTrains(INJURIES,"Total_Injured_Persons_Train_Accidents_Rail_Roads"));
+  pintarMax(computeSumaTrains(INJURIES, "Total_Injured_Persons_Train_Accidents_Rail_Roads"));
 })
 
 //pintando suma total Boating
 const sumabtnBoat = document.getElementById("sumaBoat");
 sumabtnBoat.addEventListener("click", () => {
-  pintarMax(computeSumaTrains(INJURIES,"Total_Injured_Persons_Recreational_Boating"));
+  pintarMax(computeSumaTrains(INJURIES, "Total_Injured_Persons_Recreational_Boating"));
 })
 
 
