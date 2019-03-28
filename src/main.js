@@ -180,6 +180,7 @@ const pintarYear = (data) => {
     yearData.innerHTML = string;
   }
   
+  //pintando máximo boating
 const maxbtn=document.getElementById("max");
 maxbtn.addEventListener("click",()=>{
   pintarMax(computeStats(INJURIES));
@@ -187,6 +188,90 @@ maxbtn.addEventListener("click",()=>{
 const stats=document.getElementById("stats");
 const pintarMax=(maximo)=>{
   let string="";
-    string += ` ${maximo}`
+  
+    string += ` 
+    <div class="box-type-year display-inline space text-align-center ">
+    <div class="boxes-design display-inline-block">
+    <span>${maximo}</span>
+    </div>
+    
+    </div>`
 stats.innerHTML=string;
 }
+
+ //pintando máximo Trains
+ const maxbtnTrains=document.getElementById("maxTrains");
+ maxbtnTrains.addEventListener("click",()=>{
+   pintarMaxTrains(computeStatsTrains(INJURIES));
+ })
+ const statsTrains=document.getElementById("statsTrains");
+ const pintarMaxTrains=(maximoTrains)=>{
+   let string="";
+     string += ` 
+     <div class="box-type-year display-inline space text-align-center ">
+     <div class="boxes-design display-inline-block">
+     <span>${maximoTrains}</span>
+     </div>
+     </div>`
+ stats.innerHTML=string;
+ }
+ 
+
+
+//pintando suma total Trains
+
+const sumabtnTrains=document.getElementById("sumaTrains");
+ sumabtnTrains.addEventListener("click",()=>{
+   pintarSumaTrains(computeSumaTrains(INJURIES));
+ })
+ const  SumaTrains=document.getElementById("SumaTrains");
+ const pintarSumaTrains=(sumaTrains)=>{
+   let string="";
+     string += ` <div class="box-type-year display-inline space text-align-center ">
+     <div class="boxes-design display-inline-block">
+     <span> ${sumaTrains}</span>
+     </div>
+      </div>`
+      
+ stats.innerHTML=string;
+ }
+ 
+
+
+//pintando suma total Boating
+
+const sumabtnBoat=document.getElementById("sumaBoat");
+ sumabtnBoat.addEventListener("click",()=>{
+   pintarSumaBoat(computeSumaBoat(INJURIES));
+ })
+ const  SumaBoat=document.getElementById("SumaBoat");
+ const pintarSumaBoat=(SumaBoat)=>{
+   let string="";
+     string += ` 
+     <div class="box-type-year display-inline space text-align-center ">
+     <div class="boxes-design display-inline-block">
+     <span>${SumaBoat}</span>
+     </div>
+     </div>`
+ stats.innerHTML=string;
+ }
+
+ //pintando porcentaje trains
+
+ const btnboat=document.getElementById("btnPorcent");
+ btnPorcent.addEventListener("click",()=>{
+   pintarPorcent(computeStatsPorcent());
+ })
+ const statsPorcent=document.getElementById("PorcentTrains");
+ const pintarPorcent=(porcen)=>{
+   let string="";
+     string += ` 
+     <div class="box-type-year display-inline space text-align-center ">
+     <div class="boxes-design display-inline-block">
+    <span> ${porcen}</span>
+    </div>
+     </div>`
+ stats.innerHTML=string;
+ }
+
+
