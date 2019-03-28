@@ -2,11 +2,10 @@
 
 ## Historias de Usuarios
 
-* 
-*
-*
-*
-*
+* Yo como usuario quiero obtener información sobre accidentes de transporte.
+* Yo como usuario deseo poder ordenar la información de acuerdo al tipo de accidente que yo elija.
+* Yo como usuario quiero filtrar la información del tipo de accidente por el año de mi elección.
+* Yo como usuario quiero obtener el promedio de persona heridas por tipo de accidente.
 
 ### Diseño de la Interfaz de Usuario
 

@@ -14,7 +14,8 @@ const trainBtn = document.getElementById("train");
 const boatScreen = document.getElementById("boat-screen");
 const boatBtn = document.getElementById("boat");
 const seeDataBtn = document.getElementById("see-data");
-
+const sortBtnTrain=document.getElementById("sort-por-año");
+const sortBtnBoat=document.getElementById("sort-por-año-boat");
 
 statisticScreen.style.display = "none";
 contactScreen.style.display = "none";
@@ -31,6 +32,7 @@ homeButton.addEventListener("click", () => {
   contactScreen.style.display = "none";
   typeScreen.style.display = "none";
   boatScreen.style.display = "none";
+  yearScreen.style.display="none";
   trainScreen.style.display = "none";
 
 });
@@ -83,20 +85,20 @@ trainBtn.addEventListener("click", () => {
   yearScreen.style.display = "none";
   boatScreen.style.display = "none";
   trainScreen.style.display = "block";
-  pintarTrain(arrInjuredPeople);
+  pintarTrain(showArrTrain(INJURIES));
 });
 //pintando data
 const containerTrain = document.getElementById("data-train");
-const arrInjuredPeople = INJURIES;
-const pintarTrain = (INJURIES) => {
+
+const pintarTrain = (data) => {
   let string = "";
-  for (let i = 0; i < INJURIES.length; i++) {
+  for (let i = 0; i < data.length; i++) {
     string += ` 
         <div class="row display-inline-block">
           <div class="column">
             <div class="boxes-design-type display-inline-block">
-            <p>Year: ${INJURIES[i].Year}</p>
-            <p>#: ${INJURIES[i].Total_Injured_Persons_Train_Accidents_Rail_Roads}</p>
+            <p>Year: ${data[i].Year}</p>
+            <p>#: ${data[i].accidentstrain}</p>
             </div>
           </div>
         </div>`
@@ -104,6 +106,14 @@ const pintarTrain = (INJURIES) => {
   containerTrain.innerHTML = string;
 };
 
+sortBtnTrain.addEventListener("click", ()=>{
+  arrInjuredPeople.sort(function(a,b){
+    let z=a.Year;
+    let f=b.Year;
+    return z>f?-1:z<f?1:0;
+  });
+  pintarTrain(arrInjuredPeople)
+})
 
 boatBtn.addEventListener("click", () => {
   homeScreen.style.display = "none";
@@ -113,20 +123,19 @@ boatBtn.addEventListener("click", () => {
   yearScreen.style.display = "none";
   trainScreen.style.display = "none";
   boatScreen.style.display = "block";
-  pintarBoat(arrInjuredPeopleBoat);
+  pintarBoat(showArrBoat(INJURIES));
 });
 
 const containerBoat = document.getElementById("data-boats");
-const arrInjuredPeopleBoat = INJURIES;
-const pintarBoat = (INJURIES) => {
+const pintarBoat = (data) => {
   let string = "";
-  for (let i = 0; i < INJURIES.length; i++) {
-    string += `
+  for (let i = 0; i < data.length; i++) {
+    string += ` 
         <div class="row display-inline-block">
           <div class="column">
             <div class="boxes-design-type display-inline-block">
-            <p>Year: ${INJURIES[i].Year}</p>
-            <p>#: ${INJURIES[i].Total_Injured_Persons_Recreational_Boating}</p>
+            <p>Year: ${data[i].Year}</p>
+            <p>#: ${data[i].accidentsboat}</p>
             </div>
           </div>
         </div>`
@@ -134,33 +143,135 @@ const pintarBoat = (INJURIES) => {
   containerBoat.innerHTML = string;
 };
 
+sortBtnBoat.addEventListener("click", ()=>{
+  arrInjuredPeopleBoat.sort(function(a,b){
+    let x=a.Total_Injured_Persons_Recreational_Boating;
+    let y=b.Total_Injured_Persons_Recreational_Boating;
+    return x>y?-1:x<y?1:0;
+  });
+  pintarBoat(arrInjuredPeopleBoat);
+})
+
 seeDataBtn.addEventListener("click", () => {
   const option = document.getElementById("Years").value;
-  pintarYear(arrYearInjuredpeople,option);
+  pintarYear(filterData(INJURIES,option));
 });
 
 const yearData = document.getElementById("year-data");
-const arrYearInjuredpeople = INJURIES;
-const pintarYear = (INJURIES,option) => {
+const pintarYear = (data) => {
   let string = "";
-  for (let i = 0; i < INJURIES.length; i++) {
-    if(INJURIES[i].Year===option){
+  for (let i = 0; i < data.length; i++) {
     string += `
           <div class="center-items">
             <div class="box-type-year display-inline space text-align-center ">
               <p>Trains</p>
               </br>
-              <p>Year: ${INJURIES[i].Year}</p>
-              <p>#: ${INJURIES[i].Total_Injured_Persons_Recreational_Boating}</p>
+              <p>Year: ${data[i].Year}</p>
+              <p>#: ${data[i].Boats}</p>
             </div>
             <div class="box-type-year display-inline text-align-center ">
               <p>Boats</p>
               </br>
-              <p>Year: ${INJURIES[i].Year}</p>
-              <p>#: ${INJURIES[i].Total_Injured_Persons_Train_Accidents_Rail_Roads}</p>
+              <p>Year: ${data[i].Year}</p>
+              <p>#: ${data[i].Trains}</p>
             </div>
           </div>`
     }
+    yearData.innerHTML = string;
   }
-  yearData.innerHTML = string;
-};
+  
+  //pintando máximo boating
+const maxbtn=document.getElementById("max");
+maxbtn.addEventListener("click",()=>{
+  pintarMax(computeStats(INJURIES));
+})
+const stats=document.getElementById("stats");
+const pintarMax=(maximo)=>{
+  let string="";
+  
+    string += ` 
+    <div class="box-type-year display-inline space text-align-center ">
+    <div class="boxes-design display-inline-block">
+    <span>${maximo}</span>
+    </div>
+    
+    </div>`
+stats.innerHTML=string;
+}
+
+ //pintando máximo Trains
+ const maxbtnTrains=document.getElementById("maxTrains");
+ maxbtnTrains.addEventListener("click",()=>{
+   pintarMaxTrains(computeStatsTrains(INJURIES));
+ })
+ const statsTrains=document.getElementById("statsTrains");
+ const pintarMaxTrains=(maximoTrains)=>{
+   let string="";
+     string += ` 
+     <div class="box-type-year display-inline space text-align-center ">
+     <div class="boxes-design display-inline-block">
+     <span>${maximoTrains}</span>
+     </div>
+     </div>`
+ stats.innerHTML=string;
+ }
+ 
+
+
+//pintando suma total Trains
+
+const sumabtnTrains=document.getElementById("sumaTrains");
+ sumabtnTrains.addEventListener("click",()=>{
+   pintarSumaTrains(computeSumaTrains(INJURIES));
+ })
+ const  SumaTrains=document.getElementById("SumaTrains");
+ const pintarSumaTrains=(sumaTrains)=>{
+   let string="";
+     string += ` <div class="box-type-year display-inline space text-align-center ">
+     <div class="boxes-design display-inline-block">
+     <span> ${sumaTrains}</span>
+     </div>
+      </div>`
+      
+ stats.innerHTML=string;
+ }
+ 
+
+
+//pintando suma total Boating
+
+const sumabtnBoat=document.getElementById("sumaBoat");
+ sumabtnBoat.addEventListener("click",()=>{
+   pintarSumaBoat(computeSumaBoat(INJURIES));
+ })
+ const  SumaBoat=document.getElementById("SumaBoat");
+ const pintarSumaBoat=(SumaBoat)=>{
+   let string="";
+     string += ` 
+     <div class="box-type-year display-inline space text-align-center ">
+     <div class="boxes-design display-inline-block">
+     <span>${SumaBoat}</span>
+     </div>
+     </div>`
+ stats.innerHTML=string;
+ }
+
+ //pintando porcentaje trains
+
+ const btnboat=document.getElementById("btnPorcent");
+ btnPorcent.addEventListener("click",()=>{
+   pintarPorcent(computeStatsPorcent());
+ })
+ const statsPorcent=document.getElementById("PorcentTrains");
+ const pintarPorcent=(porcen)=>{
+   let string="";
+     string += ` 
+     <div class="box-type-year display-inline space text-align-center ">
+     <div class="boxes-design display-inline-block">
+    <span> ${porcen}</span>
+    </div>
+     </div>`
+ stats.innerHTML=string;
+ }
+
+

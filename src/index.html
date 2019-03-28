@@ -52,16 +52,81 @@
       </nav>
     </div>
   </header>
-  <div id="home-screen">
-    <section>
-      <p>contenido home...</p>
-
-    </section>
+  <div id="home-screen" class="home-screen center-content">
+    <div class="box-for-info-home">
+      <figure class="display-inline-block">
+        <img class="information " src="img/information.png" alt="info icon">
+      </figure>
+      <div class="display-inline-block">
+        <h2 class="Real-Information ">Real information</h2>
+        <p>Datature provides real data straight from the US transport records</p>
+      </div>
+    </div>
+    <div class="box-for-info-home">
+      <figure class="display-inline-block">
+        <img class="information " src="img/fast.png" alt="info icon">
+      </figure>
+      <div class="display-inline-block">
+        <h2 class="Real-Information ">Fast Response</h2>
+        <p>Datature provides a fast web response</p>
+      </div>
+    </div>
+    <div class="box-for-info-home">
+      <figure class="display-inline-block">
+        <img class="information " src="img/calendar.png" alt="info icon">
+      </figure>
+      <div class="display-inline-block">
+        <h2 class="Real-Information ">Up to date facts</h2>
+        <p>Datature has all the facts up to date and will update once the data has been verified</p>
+      </div>
+    </div>
+    <div class="box-for-info-home">
+      <figure class="display-inline-block">
+        <img class="information " src="img/subway.png" alt="info icon">
+      </figure>
+      <div class="display-inline-block">
+        <h2 class="Real-Information ">Train Accidents</h2>
+        <p>Datature has data of people who were injured in train accidents from 1960-2016</p>
+      </div>
+    </div>
+    <div class="box-for-info-home">
+      <figure class="display-inline-block">
+        <img class="information " src="img/boats.svg" alt="info icon">
+      </figure>
+      <div class="display-inline-block">
+        <h2 class="Real-Information ">Boat Accidents</h2>
+        <p>Datature has data of people who were injured in boat accidents from 1960-2016</p>
+      </div>
+    </div>
   </div>
-  <div id="statistic-screen">
-    <section>
-      <p>contenido....</p>
-    </section>
+  <div id="statistic-screen"  class="center-content" >
+   
+    <div id="stats" class="center-items box-type"></div>
+    <button id=max class="see-btn" >Max</button>
+
+
+    <div id="statsTrains" class="center-items box-type"></div>
+    <button id=maxTrains class="see-btn">MaxTrains</button>
+
+    
+      <div id="SumaTrains" class="center-items box-type"></div>
+      <button id="sumaTrains" class="see-btn">SumaTrains</button>
+    
+      <div id="SumaBoat"class="center-items box-type"></div>
+      <button id="sumaBoat" class="see-btn">SumaBoat</button>
+    
+    
+    
+      <div id="PorcentTrains" class="center-items box-type"></div>
+      <button id="btnPorcent" class="see-btn">PorcentTrains</button>
+
+      <div id="PorcentBoat" class="center-items box-type"></div>
+      <button id="btnPorcentBoat" class="see-btn">PorcentBoat</button>
+    
+
+  </div>
+
+
   </div>
   <div id="contact-us-screen">
     <section>
@@ -70,18 +135,25 @@
     </section>
   </div>
   <div id="type-accident-screen" class="center-content">
-    <div class="type-boxes">
-      <div class="box-types train-box">
-        <img src="img/location.png" alt="location" class="images display-inline">
-        <h1 class="title-type display-inline">TRAIN ACCIDENTS</h1>
-        <p class="definition">There have been a number of fatal commuter train crashes through the years. Here's a list of years and the number of injured people since 1960</p>
-          <button class="see-data-btn display-inline train-n-boats" id="train">Trains</button>
+    <div class="center-items box-types">
+      <figure class="display-inline-block">
+        <img class="images" src="img/location.png" alt="location">
+      </figure>
+      <div class="display-inline-block">
+        <h2>Train Accidents</h2>
+        <p class="description-type">There have been a number of fatal commuter train crashes through the years. Here's a list of years and the number of injured people since 1960</p>
+        <button id="train" class="see-data-btn">Trains</button>
       </div>
-      <div class="box-types">
-        <img src="img/sea.png" alt="sea" class="images display-inline">
-        <h1 class="title-type display-inline">BOAT ACCIDENTS</h1>
-        <p class="definition">There have been a number of fatal recreational boat accidents through the years. Here's a list of years and the number of injured people since 1960</p>
-          <button class="see-data-btn display-inline train-n-boats" id="boat">Boats</button>
+    </div>
+    <div class="center-items box-types">
+        <figure class="display-inline-block">
+          <img class="images" src="img/sea.png" alt="location">
+        </figure>
+        <div class="display-inline-block">
+          <h2>Boat Accidents</h2>
+          <p class="description-type">There have been a number of boat crashes through the years. Here's a list of years and the number of injured people since 1960</p>
+          <button id="boat" class="see-data-btn">Boats</button>
+        </div>
       </div>
     </div>
   </div>
@@ -126,9 +198,11 @@
     </section>
   </div>
   <div id="train-screen">
+    <button id="sort-por-año" class="see-data-btn">Sort by Latest year</button>
     <div id="data-train"></div>
   </div>
   <div id="boat-screen">
+    <button id="sort-por-año-boat" class="see-data-btn">Sort by most injured people</button>
     <div id="data-boats"></div>
   </div>
   <!--<footer class="position-absolute text-align-center">
