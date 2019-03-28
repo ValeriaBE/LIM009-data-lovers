@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Radley" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=RadleySawarabi+Mincho" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 </head>
 
@@ -23,38 +22,29 @@
         <img class="icon display-inline" src="img/eagle.svg" alt="emoji injured">
         <h1 class="display-inline text-font color-white">Datature</h1>
       </div>
-      <div class="search-container display-inline">
-        <form>
-          <input class=" search position-absolute" type="search">
-          <i class="fa position-absolute text-align-center fa-search"></i>
-        </form>
-      </div>
     </div>
     <div id="menu-principal" class="menu-principal">
       <nav class=" navbar">
         <ul>
           <li class="display-inline">
-            <button id="home-menu-btn" class="text-font-btn text-align-center">Home</button>
+            <button id="home-menu-btn" class="text-font text-size-btn text-align-center">Home</button>
           </li>
           <li class="display-inline">
-            <button id="tipo-menu-btn" class="text-font-btn text-align-center">Type of accident</button>
+            <button id="tipo-menu-btn" class="text-font text-size-btn text-align-center">Type of accident</button>
           </li>
           <li class="display-inline">
-            <button id="año-menu-btn" class="text-font-btn text-align-center">Year of accident</button>
+            <button id="año-menu-btn" class="text-font text-size-btn text-align-center">Year of accident</button>
           </li>
           <li class="display-inline">
-            <button id="about-menu-btn" class="text-font-btn text-align-center">Stats</button>
-          </li>
-          <li class="display-inline">
-            <button id="contact-menu-btn" class="text-font-btn text-align-center">Contact us</button>
+            <button id="about-menu-btn" class="text-font text-size-btn text-align-center">Stats</button>
           </li>
         </ul>
       </nav>
     </div>
   </header>
-  <div id="home-screen" class="home-screen center-content">
+  <div id="home-screen" class="center-content home-screen">
     <div class="box-for-info-home">
-      <figure class="display-inline-block">
+      <figure class="display-inline-block home-figure">
         <img class="information " src="img/information.png" alt="info icon">
       </figure>
       <div class="display-inline-block">
@@ -63,8 +53,8 @@
       </div>
     </div>
     <div class="box-for-info-home">
-      <figure class="display-inline-block">
-        <img class="information " src="img/fast.png" alt="info icon">
+      <figure class="display-inline-block home-figure">
+        <img class="information " src="img/fasttime.svg" alt="info icon">
       </figure>
       <div class="display-inline-block">
         <h2 class="Real-Information ">Fast Response</h2>
@@ -72,7 +62,7 @@
       </div>
     </div>
     <div class="box-for-info-home">
-      <figure class="display-inline-block">
+      <figure class="display-inline-block home-figure">
         <img class="information " src="img/calendar.png" alt="info icon">
       </figure>
       <div class="display-inline-block">
@@ -81,7 +71,7 @@
       </div>
     </div>
     <div class="box-for-info-home">
-      <figure class="display-inline-block">
+      <figure class="display-inline-block home-figure">
         <img class="information " src="img/subway.png" alt="info icon">
       </figure>
       <div class="display-inline-block">
@@ -90,7 +80,7 @@
       </div>
     </div>
     <div class="box-for-info-home">
-      <figure class="display-inline-block">
+      <figure class="display-inline-block home-figure">
         <img class="information " src="img/boats.svg" alt="info icon">
       </figure>
       <div class="display-inline-block">
@@ -103,74 +93,71 @@
     <div id="stats"></div>
     <button id=max>Max</button>
   </div>
-  <div id="contact-us-screen">
-    <section>
-      <p>contenido contact...</p>
-      <ul id="resultado"></ul>
-    </section>
-  </div>
   <div id="type-accident-screen" class="center-content">
     <div class="center-items box-types">
       <figure class="display-inline-block">
         <img class="images" src="img/location.png" alt="location">
       </figure>
       <div class="display-inline-block">
-        <h2>Train Accidents</h2>
-        <p class="description-type">There have been a number of fatal commuter train crashes through the years. Here's a list of years and the number of injured people since 1960</p>
-        <button id="train" class="see-data-btn">Trains</button>
+        <h2 class="title-type">Train Accidents</h2>
+        <p class="description-type">There have been a number of fatal commuter train crashes through the years. Here's a
+          list of years and the number of injured people since 1960.</p>
+        <button id="train" class="see-data-btn train-n-boats">Trains</button>
       </div>
     </div>
     <div class="center-items box-types">
-        <figure class="display-inline-block">
-          <img class="images" src="img/sea.png" alt="location">
-        </figure>
-        <div class="display-inline-block">
-          <h2>Boat Accidents</h2>
-          <p class="description-type">There have been a number of boat crashes through the years. Here's a list of years and the number of injured people since 1960</p>
-          <button id="boat" class="see-data-btn">Boats</button>
-        </div>
+      <figure class="display-inline-block">
+        <img class="images" src="img/sea.png" alt="location">
+      </figure>
+      <div class="display-inline-block">
+        <h2 class="title-type">Boat Accidents</h2>
+        <p class="description-type">There have been a number of recreational boat crashes through the years. Here's a
+          list of years and the number of injured people since 1960.</p>
+        <button id="boat" class="see-data-btn train-n-boats">Boats</button>
       </div>
     </div>
   </div>
   <div id="year-accident-screen" class="center-content">
-    <section class="center-content">
-      <select id="Years" class="year-dropdown-box">
-        <option> YEAR </option>
-        <option value="1960-01-04">1960</option>
-        <option value="1965-01-04">1965</option>
-        <option value="1975-01-04">1975</option>
-        <option value="1980-01-04">1980</option>
-        <option value="1985-01-04">1985</option>
-        <option value="1990-01-04">1990</option>
-        <option value="1991-01-04">1991</option>
-        <option value="1992-01-04">1992</option>
-        <option value="1993-01-04">1993</option>
-        <option value="1994-01-04">1994</option>
-        <option value="1995-01-04">1995</option>
-        <option value="1996-01-04">1996</option>
-        <option value="1997-01-04">1997</option>
-        <option value="1998-01-04">1998</option>
-        <option value="1999-01-04">1999</option>
-        <option value="2001-01-04">2001</option>
-        <option value="2002-01-04">2002</option>
-        <option value="2003-01-04">2003</option>
-        <option value="2004-01-04">2004</option>
-        <option value="2005-01-04">2005</option>
-        <option value="2006-01-04">2006</option>
-        <option value="2007-01-04">2007</option>
-        <option value="2008-01-04">2008</option>
-        <option value="2009-01-04">2009</option>
-        <option value="2010-01-04">2010</option>
-        <option value="2011-01-04">2011</option>
-        <option value="2012-01-04">2012</option>
-        <option value="2013-01-04">2013</option>
-        <option value="2014-01-04">2014</option>
-        <option value="2015-01-04">2015</option>
-        <option value="2016-01-04">2016</option>
-      </select>
-      <button id="see-data" class="see-data-btn">SEE DATA</button>
+    <div class="center-content">
+      <div class="center-items">
+        <select id="Years" class="year-dropdown-box">
+          <option> YEAR </option>
+          <option value="1960-01-04">1960</option>
+          <option value="1965-01-04">1965</option>
+          <option value="1975-01-04">1975</option>
+          <option value="1980-01-04">1980</option>
+          <option value="1985-01-04">1985</option>
+          <option value="1990-01-04">1990</option>
+          <option value="1991-01-04">1991</option>
+          <option value="1992-01-04">1992</option>
+          <option value="1993-01-04">1993</option>
+          <option value="1994-01-04">1994</option>
+          <option value="1995-01-04">1995</option>
+          <option value="1996-01-04">1996</option>
+          <option value="1997-01-04">1997</option>
+          <option value="1998-01-04">1998</option>
+          <option value="1999-01-04">1999</option>
+          <option value="2001-01-04">2001</option>
+          <option value="2002-01-04">2002</option>
+          <option value="2003-01-04">2003</option>
+          <option value="2004-01-04">2004</option>
+          <option value="2005-01-04">2005</option>
+          <option value="2006-01-04">2006</option>
+          <option value="2007-01-04">2007</option>
+          <option value="2008-01-04">2008</option>
+          <option value="2009-01-04">2009</option>
+          <option value="2010-01-04">2010</option>
+          <option value="2011-01-04">2011</option>
+          <option value="2012-01-04">2012</option>
+          <option value="2013-01-04">2013</option>
+          <option value="2014-01-04">2014</option>
+          <option value="2015-01-04">2015</option>
+          <option value="2016-01-04">2016</option>
+        </select>
+        <button id="see-data" class="see-data-btn">SEE DATA</button>
+      </div>
       <div id="year-data"></div>
-    </section>
+    </div>
   </div>
   <div id="train-screen">
     <button id="sort-por-año" class="see-data-btn">Sort by Latest year</button>
@@ -180,19 +167,6 @@
     <button id="sort-por-año-boat" class="see-data-btn">Sort by most injured people</button>
     <div id="data-boats"></div>
   </div>
-  <!--<footer class="position-absolute text-align-center">
-    <div class="social-icon color-white">
-      <a class="color-white" href="https://es-la.facebook.com/laboratoriala/">
-        <p class=" color-white text-align-center fab fa-facebook-f facebook-bg"></p>
-      </a>
-      <a class="color-white" href="https://twitter.com/Laboratoriala?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
-        <p class=" color-white text-align-center fab fa-twitter twitter-bg"></p>
-      </a>
-      <a class="color-white" href="https://www.instagram.com/laboratoriala/?hl=es-la">
-        <p class="color-white text-align-center fab fa-instagram instagram-bg"></p>
-      </a>
-    </div>
-  </footer>-->
   <script src="./data/injuries/injuries.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
