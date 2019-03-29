@@ -1,103 +1,89 @@
 //showArrTrain y Boat son para crear un nuevo arrays solo con los elementos de tren y bote
-const showArrTrain = (data)=>{ 
-  let newdatat=[];
-  for(let i=0;i<data.length;i++){
+const showArrTrain = (data) => {
+  let newdatat = [];
+  for (let i = 0; i < data.length; i++) {
     newdatat.push({
-      'Year':data[i].Year,
+      'Year': data[i].Year,
       'accidentstrain': data[i]['Total_Injured_Persons_Train_Accidents_Rail_Roads']
     })
   }
   return newdatat;
-  // console.log(newdatat);
 }
-window.showArrTrain=showArrTrain;
+window.showArrTrain = showArrTrain;
 
-const showArrBoat = (data)=>{ 
-  let newdatab=[];
-  for(let i=0;i<data.length;i++){
+const showArrBoat = (data) => {
+  let newdatab = [];
+  for (let i = 0; i < data.length; i++) {
     newdatab.push({
-      'Year':data[i].Year,
+      'Year': data[i].Year,
       'accidentsboat': data[i]['Total_Injured_Persons_Recreational_Boating']
     })
   }
   return newdatab;
-  // console.log(newdatab);
 }
-window.showArrBoat=showArrBoat;
+window.showArrBoat = showArrBoat;
 
-const filterData=(data,condition)=>{
-  let filteredArr=[];
-  for(let i=0;i<data.length;i++){
-    if(data[i].Year===condition){
+const filterData = (data, condition) => {
+  let filteredArr = [];
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].Year === condition) {
       filteredArr.push({
-        'Year':data[i].Year,
-        'Trains':data[i].Total_Injured_Persons_Train_Accidents_Rail_Roads,
-        'Boats':data[i].Total_Injured_Persons_Recreational_Boating
+        'Year': data[i].Year,
+        'Trains': data[i].Total_Injured_Persons_Train_Accidents_Rail_Roads,
+        'Boats': data[i].Total_Injured_Persons_Recreational_Boating
       })
     }
   }
   return filteredArr;
 }
-window.filterData=filterData;
+window.filterData = filterData;
+
+const sortData=(data,sortBy,sortOrder)=>{
+const listordered=data.sort(function(a,b){
+  if(a[sortBy]>b[sortBy]){
+    return 1;
+  }else if(a[sortBy]<b[sortBy]){
+    return -1;
+  }else if(a[sortBy]===b[sortBy]){
+    return 0;
+  }
+});
+if(sortOrder=="A"){
+  return listordered;
+}else if(sortOrder=="D"){
+  return (listordered.reverse());
+}
+}
+window.sortData=sortData;
+
 
 //HALLANDO EL MÁXIMO Y/O MÍNIMO DEL NÚMERO DE ACCIDENTES EN TRAINS
 //Cálculo del máximo de boat
 
-const computeStats=(data)=>{
-  let maximo=0;
-  for(let i=0;i<data.length;i++){
-    if(maximo<data[i].Total_Injured_Persons_Recreational_Boating){
-     maximo=data[i].Total_Injured_Persons_Recreational_Boating;
+const computeStats = (data,statsBy) => {
+  let maximoBoats = 0;
+  for (let i = 0; i < data.length; i++) {
+    if (maximoBoats < data[i][statsBy]) {
+      maximoBoats = data[i][statsBy];
     }
   }
-  return maximo;
+  return [maximoBoats];
 }
-window.computeStats=computeStats;//4612
-
-
-//Cálculo del máximo de Trains
-const computeStatsTrains=(data)=>{
-  let maximoTrains=0;
-  for(let i=0;i<data.length;i++){
-    if(maximoTrains<data[i].Total_Injured_Persons_Train_Accidents_Rail_Roads){
-      maximoTrains=data[i].Total_Injured_Persons_Train_Accidents_Rail_Roads;
-    }
-  }
-  return maximoTrains;
-}
-window.computeStatsTrains=computeStatsTrains;//1884
+window.computeStats = computeStats;//4612
 
 //Suma de personas accidentadas por Trains en EEUU
-
-const computeSumaTrains=(INJURIES)=>{
-  let sumaTrains=0;
-  for(let i=0; i < INJURIES.length; i++){
-  
-    sumaTrains += INJURIES[i].Total_Injured_Persons_Train_Accidents_Rail_Roads;
+const computeSumaTrains = (INJURIES, sumaBy) => {
+  let sumaTrains = 0;
+  for (let i = 0; i < INJURIES.length; i++) {
+    sumaTrains += INJURIES[i][sumaBy];
   }
-  
-  return sumaTrains ;
+  return sumaTrains;
 }
- window.computeSumaTrains=computeSumaTrains;//10585
-
-
-  
+window.computeSumaTrains = computeSumaTrains;//10585
 
 
 
-//Suma de personas accidentadas por Boat en EEUU
-
-const computeSumaBoat=(INJURIES)=>{
-  let sumaBoats=0;
-  for(let i=0; i < INJURIES.length; i++){
-  
-    sumaBoats += INJURIES[i].Total_Injured_Persons_Recreational_Boating;
-  }
-  
-  return sumaBoats ;
-}
- window.computeSumaBoat=computeSumaBoat;//105799
 
 
-  
-//
+
+
