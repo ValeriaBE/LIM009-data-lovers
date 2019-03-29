@@ -1,10 +1,10 @@
 # Índice
-*  [Sobre Datature](#preámbulo)
-*  [Definición del producto](#preámbulo)
-*  [Entrevistas](#preámbulo)
-*  [Historias de usuario](#preámbulo)
-*  [Proceso de diseño](#preámbulo)
-*  [Prototipo de baja fidelidad](#preámbulo)
+*  [Sobre Datature](#Datature)
+*  [Definición del producto](#)
+*  [Entrevistas](#)
+*  [Historias de usuario](#p)
+*  [Proceso de diseño](#p)
+*  [Prototipo de baja fidelidad](#p)
 *  [Prototipo de alta fidelidad](#preámbulo)
 *  [Test de usabilidad](#preámbulo)
 
@@ -19,15 +19,15 @@ Sus respuestas indicaron que necesitan una página amigable y sencilla de utiliz
 
 Para esta definición del producto se resuelven las siguientes preguntas:
 1. ¿Quiénes son los principales usuarios de Datature? Principalmente, usuarios ...
-2. ¿Cuáles son los objetivos del usuario con respecto al producto? Conocer el detalle la información de accidentes....para tomar decisiones estratégicas que optimizan su búsqueda.
-3. ¿Cuáles son los datos más importantes que debe mostrar en la interfaz y porqué? Debería poder visualizar ...Además de filtro de tipo de año 
-4. ¿En qué momento o circunstancia se ve útil Datature? Cuando el usuario nuevo ... Además, en la intefaz encontrará un filtro de tipo que le servirá cuando quiera conocer 
-5. ¿Cómo resuelve, el producto, el problema del usuario? Datature ayudará ...
+2. ¿Cuáles son los objetivos del usuario con respecto al producto? Conocer el detalle la información de accidentes de tránsito de EEUU por bote y por tren desde 1960 hata 2016 ,para tomar decisiones estratégicas del usuario  que optimizarán su búsqueda.
+3. ¿Cuáles son los datos más importantes que debe mostrar en la interfaz y porqué? Debería poder visualizar el número de personas accidentadas desde 1960 hasta 2016 de los dos tipos de accidentes .Además de filtro de tipo de año .
+4. ¿En qué momento o circunstancia se ve útil Datature? Cuando el usuario nuevo encuentra todos los datos que requiere. Además, en la intefaz encontrará un filtro de tipo que le servirá cuando quiera conocer 
+5. ¿Cómo resuelve, el producto, el problema del usuario? Datature ayudará al usuario encontrar la cantidad de personas heridas en los 2 tipos de accidentes de transporte desde 1960 hasta 2016 de manera sencilla y detallada.
 ## Entrevistas
 Las entrevistas fueron dirigidas a usuarios 
 Se hicieron las siguientes preguntas al entrevistado:
-1. ¿Algunas vez 
-2. ¿Cómo usuario
+1. ¿Algunas vez has tenido experiencia con algún tipo de accidente?
+2. ¿Cómo usuario 
 3. ¿Cuál es tu objetivo
 4. ¿Que necesitas para alcanzar ese  objetivo ¿Considerarías la información a detalle de cada accidente como herramiententa para llegar a tu meta con respecto a la información que requieres?
 5. ¿Cómo te gustaría que esa información sea mostrada en una página web para que sea lo más fácil, rápido y agradable posible de acceder?
@@ -66,7 +66,7 @@ Historia 4
 
 ## Proceso del diseño de la Interfaz de Usuario
 ### Descubrimiento e investigación
-investigacion de datos de accidentes
+---investigacion de datos de accidentes
 
 ### Sintesis y definición
 
@@ -74,10 +74,10 @@ investigacion de datos de accidentes
 
 En esta fase usamos los datos coleccionados en la fase de investigación y descubrimiento buscando tendencias e insights valiosos para el desarrollo de Dataure. Entendiendo los deseos y necesidades de nuestros usuarios, se desarrolló una plataforma simple y didactica en la cual muestre al usuario de manera ordenada, información más relevante acerca del número de personas accidentes por dos tipos de accidentes en EEUU, además se colocaron filtros por el tipo de año, la cual permita brindarle información concisa y relevante a nuestro usuario ayudando a mejorar su estrategia para obtener la información que necesitan.
 ### Ideación
-![Ideación](/src/img/img-readme/)
+![Ideación]---imagen
 ¡Se utilizaron sketches, y fluyeron las ideas! Se tuvo como propósito construir una web con diseño práctico, interfaz didáctica, fácil de usar y amigable, que permita al usuario acceder a la información relevante de una manera sencilla y sobre todo que cumpla con la funcionalidad y objetivo deseado, es decir, que ayude o contribuya a mejorar la búsqueda de las personas accidentadas por ciertos tipos de años.
 ### Prototipado
-![Prototipado](/src/img/img-readme/)
+![Prototipado]---imagen
 
 Se elaboró un prototipo práctico, se tuvo como finalidad cumplir con los siguientes objetivos:
 
