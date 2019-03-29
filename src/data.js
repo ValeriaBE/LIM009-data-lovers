@@ -1,3 +1,7 @@
+function sum(a, b) {
+  return a + b;
+}
+window.exports = sum;
 //showArrTrain y Boat son para crear un nuevo arrays solo con los elementos de tren y bote
 const showArrTrain = (data) => {
   let newdatat = [];

@@ -1,18 +1,18 @@
-const homeButton = document.getElementById("home-menu-btn");
-const aboutButton = document.getElementById("about-menu-btn");
-const typeButton = document.getElementById("tipo-menu-btn");
-const yearButton = document.getElementById("año-menu-btn");
-const homeScreen = document.getElementById("home-screen");
-const statisticScreen = document.getElementById("statistic-screen");
-const typeScreen = document.getElementById("type-accident-screen");
-const yearScreen = document.getElementById("year-accident-screen");
-const trainScreen = document.getElementById("train-screen");
+const homeButton = document.getElementById("home_menu_btn");
+const aboutButton = document.getElementById("about_menu_btn");
+const typeButton = document.getElementById("tipo_menu_btn");
+const yearButton = document.getElementById("ano_menu_btn");
+const homeScreen = document.getElementById("home_screen");
+const statisticScreen = document.getElementById("statistic_screen");
+const typeScreen = document.getElementById("type_accident_screen");
+const yearScreen = document.getElementById("year_accident_screen");
+const trainScreen = document.getElementById("train_screen");
 const trainBtn = document.getElementById("train");
-const boatScreen = document.getElementById("boat-screen");
+const boatScreen = document.getElementById("boat_screen");
 const boatBtn = document.getElementById("boat");
-const seeDataBtn = document.getElementById("see-data");
-const sortBtnTrain = document.getElementById("sort-por-año");
-const sortBtnBoat = document.getElementById("sort-por-año-boat");
+const seeDataBtn = document.getElementById("see_data");
+const sortBtnTrain = document.getElementById("sort_por_ano");
+const sortBtnBoat = document.getElementById("sort_por_ano_boat");
 
 statisticScreen.style.display = "none";
 typeScreen.style.display = "none";
@@ -68,14 +68,14 @@ trainBtn.addEventListener("click", () => {
 });
 
 //pintando data
-const containerTrain = document.getElementById("data-train");
+const containerTrain = document.getElementById("data_train");
 const pintarTrain = (data) => {
   let string = "";
   for (let i = 0; i < data.length; i++) {
     string += ` 
-        <div class="row display-inline-block">
+        <div class="row display_inline_block">
           <div class="column">
-            <div class="boxes-design-type display-inline-block">
+            <div class="boxes_design_type display_inline_block">
             <p>Year: ${data[i].Year}</p>
             <p>#: ${data[i].accidentstrain}</p>
             </div>
@@ -95,14 +95,14 @@ boatBtn.addEventListener("click", () => {
   pintarBoat(showArrBoat(INJURIES));
 });
 
-const containerBoat = document.getElementById("data-boats");
+const containerBoat = document.getElementById("data_boats");
 const pintarBoat = (data) => {
   let string = "";
   for (let i = 0; i < data.length; i++) {
     string += ` 
-        <div class="row display-inline-block">
+        <div class="row display_inline_block">
           <div class="column">
-            <div class="boxes-design-type display-inline-block">
+            <div class="boxes_design_type display_inline_block">
             <p>Year: ${data[i].Year}</p>
             <p>#: ${data[i].accidentsboat}</p>
             </div>
@@ -120,19 +120,19 @@ sortBtnBoat.addEventListener("click", () => {
   pintarBoat((sortData(showArrBoat(INJURIES),"accidentsboat","D")));
 });
 
-const yearData = document.getElementById("year-data");
+const yearData = document.getElementById("year_data");
 const pintarYear = (data) => {
   let string = "";
   for (let i = 0; i < data.length; i++) {
     string += `
-          <div class="center-items">
-            <div class="box-type-year display-inline space text-align-center ">
+          <div class="center_items">
+            <div class="box_type_year display_inline space text_align_center ">
               <p>Trains</p>
               </br>
               <p>Year: ${data[i].Year}</p>
               <p>#: ${data[i].Boats}</p>
             </div>
-            <div class="box-type-year display-inline text-align-center ">
+            <div class="box_type_year display_inline text_align_center ">
               <p>Boats</p>
               </br>
               <p>Year: ${data[i].Year}</p>
@@ -144,7 +144,7 @@ const pintarYear = (data) => {
 };
 
 seeDataBtn.addEventListener("click", () => {
-  const option = document.getElementById("Years").value;
+  const option = document.getElementById("years").value;
   pintarYear(filterData(INJURIES, option));
 });
 
@@ -157,8 +157,8 @@ const stats = document.getElementById("stats");
 const pintarMax = (maximo) => {
   let string = "";
   string += ` 
-    <div class="box-stats center-content ">
-      <div class="center-items">
+    <div class="box_stats center_content ">
+      <div class="center_items">
         <span>${maximo}</span>
       </div>
     </div>`
@@ -166,19 +166,19 @@ const pintarMax = (maximo) => {
 };
 
 //pintando máximo Trains
-const maxbtnTrains = document.getElementById("maxTrains");
+const maxbtnTrains = document.getElementById("max_trains");
 maxbtnTrains.addEventListener("click", () => {
   pintarMax(computeStats(INJURIES, "Total_Injured_Persons_Train_Accidents_Rail_Roads"));
 });
 
 //pintando suma total Trains
-const sumabtnTrains = document.getElementById("sumaTrains");
+const sumabtnTrains = document.getElementById("suma_trains");
 sumabtnTrains.addEventListener("click", () => {
   pintarMax(computeSumaTrains(INJURIES, "Total_Injured_Persons_Train_Accidents_Rail_Roads"));
 });
 
 //pintando suma total Boating
-const sumabtnBoat = document.getElementById("sumaBoat");
+const sumabtnBoat = document.getElementById("suma_boat");
 sumabtnBoat.addEventListener("click", () => {
   pintarMax(computeSumaTrains(INJURIES, "Total_Injured_Persons_Recreational_Boating"));
 });
