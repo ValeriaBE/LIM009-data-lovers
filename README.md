@@ -1,8 +1,8 @@
 # Índice
 *  [Sobre Datature](#Datature)
-*  [Definición del Producto](#Definición del Productoature)
+*  [Definición del Producto](#Definición del Producto)
 *  [Entrevistas](#Entrevistas)
-*  [Historias de Usuarios](#Historias de Usuarios)
+*  [Historias de Usuarios](Historias de Usuarios)
 *  [Proceso de diseño](#Proceso del diseño de la Interfaz del Usuario)
 *  [Prototipo de baja fidelidad](#Prototipo de baja fidelidad)
 *  [Prototipo de alta fidelidad](#Prototipo de alta fidelidad)
