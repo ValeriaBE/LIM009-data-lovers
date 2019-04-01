@@ -1,12 +1,12 @@
 # Índice
 *  [Sobre Datature](#Datature)
-*  [Definición del Producto](#Definición del Producto)
+*  [Definición del Producto](#DefinicióndelProducto)
 *  [Entrevistas](#Entrevistas)
-*  [Historias de Usuarios](Historias de Usuarios)
-*  [Proceso de diseño](#Proceso del diseño de la Interfaz del Usuario)
-*  [Prototipo de baja fidelidad](#Prototipo de baja fidelidad)
-*  [Prototipo de alta fidelidad](#Prototipo de alta fidelidad)
-*  [Test de usabilidad](#Test de usabilidad)
+*  [Historias de Usuarios](#HistoriasdeUsuarios)
+*  [Proceso de diseño](#ProcesodeldiseñodelaInterfazdelUsuario)
+*  [Prototipo de baja fidelidad](#Prototipodebajafidelidad)
+*  [Prototipo de alta fidelidad](#Prototipodealtafidelidad)
+*  [Test de usabilidad](#Testdeusabilidad)
 
 # Datature
 ## Definición del Producto.
@@ -112,7 +112,6 @@ El prototipado de alta fidelidad fue hecho en figma. Cuenta con un largo proceso
 ![figma-3](https://i.ibb.co/6WMhBtF/9.png)
 
 Link Zeplin web: [https://zpl.io/29O6NeA]
-Link Zeplin app: [zpl://project?pid=5c930bb9b533f7064cb838a6]
 
 ### Planificación:
 
