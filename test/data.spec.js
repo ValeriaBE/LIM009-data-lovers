@@ -116,7 +116,7 @@ const outputsort = [
 ];
 
 const statsBy = ['Total_Injured_Persons_Train_Accidents_Rail_Roads'];
-const outputComputestats = [1884];
+const outputComputestats = 1884;
 
 const sumaBy = ['Total_Injured_Persons_Recreational_Boating'];
 const outputComputesuma = 105799;
