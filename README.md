@@ -111,6 +111,8 @@ El prototipado de alta fidelidad fue hecho en figma. Cuenta con un largo proceso
 ![figma-2](https://i.ibb.co/wM3tHzd/8.png)
 ![figma-3](https://i.ibb.co/6WMhBtF/9.png)
 
+Link Zeplin web: [https://zpl.io/29O6NeA]
+Link Zeplin app: [zpl://project?pid=5c930bb9b533f7064cb838a6]
 
 ### Planificación:
 
@@ -130,7 +132,3 @@ La planificación según los sprints fluyeron más de acuerdo al avance del prod
 - El botón de ordenar se encontraba en la parte inferior, el usuario mencionó que se colocara al lado izquierdo, para una mejor estructura.
 
 - Al inicio, no se tenía pensada la idea de colocar una ventana Modal, el usuario sugirió que al hacer click en los botones, muestre la información .
-
-
-
-
