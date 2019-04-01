@@ -67,7 +67,7 @@ const computeStats = (data, statsBy) => {
       maximoBoats = data[i][statsBy];
     }
   }
-  return [maximoBoats];
+  return maximoBoats;
 };
 window.computeStats = computeStats; // 4612
 
