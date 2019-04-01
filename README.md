@@ -1,15 +1,15 @@
 # Índice
 *  [Sobre Datature](#Datature)
-*  [Definición del Producto](#Definición del Producto)
+*  [Definición del Producto](#definición-del-producto)
 *  [Entrevistas](#Entrevistas)
-*  [Historias de Usuarios](Historias de Usuarios)
-*  [Proceso de diseño](#Proceso del diseño de la Interfaz del Usuario)
-*  [Prototipo de baja fidelidad](#Prototipo de baja fidelidad)
-*  [Prototipo de alta fidelidad](#Prototipo de alta fidelidad)
-*  [Test de usabilidad](#Test de usabilidad)
+*  [Historias de Usuarios](#Historias-de-Usuarios)
+*  [Proceso de diseño](#Proceso-del-diseño-de-la-Interfaz-del-Usuario)
+*  [Prototipo de baja fidelidad](#Prototipo-de-baja-fidelidad)
+*  [Prototipo de alta fidelidad](#Prototipo-de-alta-fidelidad)
+*  [Test de usabilidad](#Test-de-usabilidad)
 
 # Datature
-## Definición del Producto.
+## Definición del Producto
 Datature es una página web que  permite conocer, mostrar, buscar y  filtar información sobre los heridos por accidentes de las categorías: tren y bote de los años 1960 hasta el 2016 en EEUU.
 Nuestra página web no es sólo sobre contenido. También prestamos mucha atención al diseño. Investigamos sobre la experiencia de los usuarios al navegar nuestra página, basándonos en las entrevistas que realizamos a usuarios que viven en EEUU. Hemos investigado e analizando sus problemas más frecuentes, preguntándoles como creían ellos que mejoraría su experiencia al buscar la información que requieren. 
 
@@ -34,7 +34,7 @@ Se hicieron las siguientes preguntas al entrevistado:
 3. ¿Que necesitas para alcanzar ese  objetivo ¿Considerarías la información a detalle de cada accidente como herramiententa para llegar a tu meta con respecto a la información que requieres?
 4. ¿Cómo te gustaría que esa información sea mostrada en una página web para que sea lo más fácil, rápido y agradable posible de acceder?
 
-## Historias de Usuarios.
+## Historias de Usuarios
 ```plain
 
 Historia 1:
@@ -111,6 +111,7 @@ El prototipado de alta fidelidad fue hecho en figma. Cuenta con un largo proceso
 ![figma-2](https://i.ibb.co/wM3tHzd/8.png)
 ![figma-3](https://i.ibb.co/6WMhBtF/9.png)
 
+Link Zeplin web: [https://zpl.io/29O6NeA]
 
 ### Planificación:
 
