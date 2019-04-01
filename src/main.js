@@ -157,8 +157,10 @@ const pintarMax = (maximo) => {
   let string = '';
   string += ` 
     <div class="box_stats center_content ">
-      <div class="center_items">
-        <span>${maximo}</span>
+      <div>
+        <p>Injured People:</p>
+        </br>
+        <p>#:${maximo}</p>
       </div>
     </div>`;
   stats.innerHTML = string;

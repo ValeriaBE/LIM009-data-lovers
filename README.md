@@ -1,15 +1,15 @@
 # Índice
 *  [Sobre Datature](#Datature)
-*  [Definición del Producto](#DefinicióndelProducto.)
+*  [Definición del Producto](##DefinicióndelProducto)
 *  [Entrevistas](#Entrevistas)
-*  [Historias de Usuarios](#HistoriasdeUsuarios.)
+*  [Historias de Usuarios](#HistoriasdeUsuarios)
 *  [Proceso de diseño](#ProcesodeldiseñodelaInterfazdelUsuario)
 *  [Prototipo de baja fidelidad](#Prototipodebajafidelidad:)
 *  [Prototipo de alta fidelidad](#Prototipodealtafidelidad:)
 *  [Test de usabilidad](#Testdeusabilidad:)
 
 # Datature
-## Definición del Producto.
+## Definición del Producto
 Datature es una página web que  permite conocer, mostrar, buscar y  filtar información sobre los heridos por accidentes de las categorías: tren y bote de los años 1960 hasta el 2016 en EEUU.
 Nuestra página web no es sólo sobre contenido. También prestamos mucha atención al diseño. Investigamos sobre la experiencia de los usuarios al navegar nuestra página, basándonos en las entrevistas que realizamos a usuarios que viven en EEUU. Hemos investigado e analizando sus problemas más frecuentes, preguntándoles como creían ellos que mejoraría su experiencia al buscar la información que requieren. 
 
@@ -34,7 +34,7 @@ Se hicieron las siguientes preguntas al entrevistado:
 3. ¿Que necesitas para alcanzar ese  objetivo ¿Considerarías la información a detalle de cada accidente como herramiententa para llegar a tu meta con respecto a la información que requieres?
 4. ¿Cómo te gustaría que esa información sea mostrada en una página web para que sea lo más fácil, rápido y agradable posible de acceder?
 
-## Historias de Usuarios.
+## Historias de Usuarios
 ```plain
 
 Historia 1:
