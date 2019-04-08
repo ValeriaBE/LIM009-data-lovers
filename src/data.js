@@ -1,27 +1,26 @@
 //  showArrTrain y Boat son para crear un nuevo arrays solo con los elementos de tren y bote
-const showArrTrain = (data) => {
-  let newdatat = [];
-  for (let i = 0; i < data.length; i++) {
-    newdatat.push({
-      'Year': data[i].Year,
-      'accidentstrain': data[i]['Total_Injured_Persons_Train_Accidents_Rail_Roads']
-    });
-  }
-  return newdatat;
+const newArrTrain = (INJURIES) => {
+  const showArrTrain = INJURIES.map(item => {
+    const container = {};
+    container.Year = item.Year;
+    container.accidentstrain = item.Total_Injured_Persons_Train_Accidents_Rail_Roads;
+    return container;
+  });
+  return showArrTrain;
 };
-window.showArrTrain = showArrTrain;
+window.newArrTrain = newArrTrain;
 
-const showArrBoat = (data) => {
-  let newdatab = [];
-  for (let i = 0; i < data.length; i++) {
-    newdatab.push({
-      'Year': data[i].Year,
-      'accidentsboat': data[i]['Total_Injured_Persons_Recreational_Boating']
-    });
-  }
-  return newdatab;
+
+const newArrBoat = (INJURIES) => {
+  const showArrBoat = INJURIES.map(item => {
+    const container = {};
+    container.Year = item.Year;
+    container.accidentsboat = item.Total_Injured_Persons_Recreational_Boating;
+    return container;
+  });
+  return showArrBoat;
 };
-window.showArrBoat = showArrBoat;
+window.newArrBoat = newArrBoat;
 
 const filterData = (data, condition) => {
   let filteredArr = [];
@@ -71,12 +70,14 @@ const computeStats = (data, statsBy) => {
 };
 window.computeStats = computeStats; // 4612
 
-//  Suma de personas accidentadas por Trains en EEUU
-const computeSumaTrains = (INJURIES, sumaBy) => {
-  let sumaTrains = 0;
-  for (let i = 0; i < INJURIES.length; i++) {
-    sumaTrains += INJURIES[i][sumaBy];
-  }
-  return sumaTrains;
+const computeSumaBoats = (INJURIES) => {
+  const totalBoats = INJURIES.reduce((acc, boats) => acc + boats.Total_Injured_Persons_Recreational_Boating, 0);
+  return totalBoats;
 };
-window.computeSumaTrains = computeSumaTrains; // 10585
+window.computeSumaBoats = computeSumaBoats;
+
+const computeSumaTrains = (INJURIES) => {
+  const totalTrains = INJURIES.reduce((acc, trains) => acc + trains.Total_Injured_Persons_Train_Accidents_Rail_Roads, 0);
+  return totalTrains;
+};
+window.computeSumaTrains = computeSumaTrains;

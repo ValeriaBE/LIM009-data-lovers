@@ -63,7 +63,7 @@ trainBtn.addEventListener('click', () => {
   yearScreen.style.display = 'none';
   boatScreen.style.display = 'none';
   trainScreen.style.display = 'block';
-  pintarTrain(showArrTrain(INJURIES));
+  pintarTrain(newArrTrain(INJURIES));
 });
 
 // pintando data
@@ -91,7 +91,7 @@ boatBtn.addEventListener('click', () => {
   yearScreen.style.display = 'none';
   trainScreen.style.display = 'none';
   boatScreen.style.display = 'block';
-  pintarBoat(showArrBoat(INJURIES));
+  pintarBoat(newArrBoat(INJURIES));
 });
 
 const containerBoat = document.getElementById('data_boats');
@@ -112,11 +112,11 @@ const pintarBoat = (data) => {
 };
 
 sortBtnTrain.addEventListener('click', () => {
-  pintarTrain((sortData(showArrTrain(INJURIES), 'Year', 'D')));
+  pintarTrain((sortData(newArrTrain(INJURIES), 'Year', 'D')));
 });
 
 sortBtnBoat.addEventListener('click', () => {
-  pintarBoat((sortData(showArrBoat(INJURIES), 'accidentsboat', 'D')));
+  pintarBoat((sortData(newArrBoat(INJURIES), 'accidentsboat', 'D')));
 });
 
 const yearData = document.getElementById('year_data');
@@ -159,7 +159,6 @@ const pintarMax = (maximo) => {
     <div class="box_stats center_content ">
       <div>
         <p>Injured People:</p>
-        </br>
         <p>#:${maximo}</p>
       </div>
     </div>`;
@@ -175,11 +174,23 @@ maxbtnTrains.addEventListener('click', () => {
 // pintando suma total Trains
 const sumabtnTrains = document.getElementById('suma_trains');
 sumabtnTrains.addEventListener('click', () => {
-  pintarMax(computeSumaTrains(INJURIES, 'Total_Injured_Persons_Train_Accidents_Rail_Roads'));
+  pintarMax(computeSumaTrains(INJURIES));
 });
 
 // pintando suma total Boating
 const sumabtnBoat = document.getElementById('suma_boat');
 sumabtnBoat.addEventListener('click', () => {
-  pintarMax(computeSumaTrains(INJURIES, 'Total_Injured_Persons_Recreational_Boating'));
+  pintarMax(computeSumaBoats(INJURIES));
 });
+
+
+const cargarJson = () => {
+  fetch('./data/injuries/injuries.json')
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      console.log(data);
+    });
+};
+cargarJson();

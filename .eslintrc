@@ -8,14 +8,15 @@
   "extends": "eslint:recommended",
   "globals": {
     "example": false,
-    "showArrBoat" :false,
-    "showArrTrain":false,
+    "newArrBoat" :false,
+    "newArrTrain":false,
     "filterData":false,
     "sortData":false,
     "computeStats":false,
-    "computeSumaTrains":false,
     "INJURIES":false,
-    "data":false
+    "data":false,
+    "computeSumaTrains":false,
+    "computeSumaBoats":false
   },
   "rules": {
     "allowTernary": true,

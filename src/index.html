@@ -2,133 +2,165 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Datature</title>
-  <link rel="icon" href="img/eagle.ico"/>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"/>
-  <link href="https://fonts.googleapis.com/css?family=Radley" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="icon" href="img/government.ico" />
 </head>
 
 <body>
   <header>
-    <div class="topnav">
-      <div id="menu_de_logo" class=" display_inline center_items menu_de_logo">
-        <img class="icon display_inline" src="img/eagle.svg" alt="emoji injured"/>
-        <h1 class="display_inline text_font color_white">Datature</h1>
-      </div>
+    <div id="menu-de-logo" class="inline-block logo">
+      <img class="icon inline" src="img/government.svg" alt="">
+      <h1 class="inline title">Datature</h1>
     </div>
-    <div id="menu_principal" class="menu_principal">
-      <nav class=" navbar">
+    <div id="menu_principal" class="inline-block navbar">
+      <nav>
         <ul>
-          <li class="display_inline">
-            <button id="home_menu_btn" class="text_font text_size_btn text_align_center">Home</button>
+          <li class="inline">
+            <button id="home_menu_btn">Home</button>
           </li>
-          <li class="display_inline">
-            <button id="tipo_menu_btn" class="text_font text_size_btn text_align_center">Type of accident</button>
+          <li class="inline">
+            <button id="tipo_menu_btn">Type of accident</button>
           </li>
-          <li class="display_inline">
-            <button id="ano_menu_btn" class="text_font text_size_btn text_align_center">Year of accident</button>
+          <li class="inline">
+            <button id="ano_menu_btn">Year of accident</button>
           </li>
-          <li class="display_inline">
-            <button id="about_menu_btn" class="text_font text_size_btn text_align_center">Stats</button>
+          <li class="inline">
+            <button id="about_menu_btn">Stats</button>
           </li>
         </ul>
       </nav>
     </div>
   </header>
-  <div id="home_screen" class="center_content home_screen">
-    <div class="box_for_info_home">
-      <figure class="display_inline_block home_figure">
-        <img class="information " src="img/information.png" alt="info icon"/>
+  <section class="hero">
+    <div class="hero-inner">
+      <h2>Official Government</h2>
+      <h3>Information</h3>
+      <a href="https://www.templatemonster.com/demo/52938.html" class="btn learn">Learn more</a>
+    </div>
+  </section>
+  <main>
+    <div class="three-facts">
+      <div class="inline-block facts">
+        <figure class="fact-img-box">
+          <img class="img-facts" src="img/fasttime.svg" alt="">
+        </figure>
+        <h2>Fast web response</h2>
+        <p>Datature provides a fast web response for every electronic device</p>
+      </div>
+      <div class="inline-block facts">
+        <figure class="fact-img-box">
+          <img class="img-facts" src="img/up.svg" alt="">
+        </figure>
+        <h2>Up to date facts</h2>
+        <p>Datature has all the facts up to date and will update once the data has been verified</p>
+      </div>
+      <div class="inline-block facts">
+        <figure class="fact-img-box">
+          <img class="img-facts" src="img/stat.svg" alt="">
+        </figure>
+        <h2>Real Statistics</h2>
+        <p>Datature presents statistics of first calibure, all certified by the governement of transportation</p>
+      </div>
+    </div>
+    <div class="mailing-list">
+      <h2>Join our mailing list</h2>
+      <input class="input-mail" type="text" placeholder="Your name">
+      <input class="input-mail" type="text" placeholder="Your email address">
+      <button class="btn join">Join</button>
+    </div>
+  </main>
+
+  <!-- <div id="home_screen">
+    <div>
+      <figure>
+        <img src=" imgng" alt="info icon" />
       </figure>
-      <div class="display_inline_block">
-        <h2 class="real_information ">Real information</h2>
+      <div>
+        <h2>Real</h2>
         <p>Datature provides real data straight from the US transport records</p>
       </div>
     </div>
-    <div class="box_for_info_home">
-      <figure class="display_inline_block home_figure">
-        <img class="information " src="img/fasttime.svg" alt="info icon"/>
+    <div>
+      <figure>
+        <img src=" img/fasttime.svg" alt="info icon" />
       </figure>
-      <div class="display_inline_block">
-        <h2 class="real_information ">Fast Response</h2>
+      <div>
+        <h2>Fast Response</h2>
         <p>Datature provides a fast web response</p>
       </div>
     </div>
-    <div class="box_for_info_home">
-      <figure class="display_inline_block home_figure">
-        <img class="information " src="img/calendar.png" alt="info icon"/>
+    <div>
+      <figure>
+        <img src=" img/calendar.png" alt="info icon" />
       </figure>
-      <div class="display_inline_block">
-        <h2 class="real_information ">Up to date facts</h2>
+      <div>
+        <h2>Up to date facts</h2>
         <p>Datature has all the facts up to date and will update once the data has been verified</p>
       </div>
     </div>
-    <div class="box_for_info_home">
-      <figure class="display_inline_block home_figure">
-        <img class="information " src="img/subway.png" alt="info icon"/>
+    <div>
+      <figure>
+        <img src=" img/subway.png" alt="info icon" />
       </figure>
-      <div class="display_inline_block">
-        <h2 class="real_information ">Train Accidents</h2>
+      <div>
+        <h2>Train Accidents</h2>
         <p>Datature has data of people who were injured in train accidents from 1960-2016</p>
       </div>
     </div>
-    <div class="box_for_info_home">
-      <figure class="display_inline_block home_figure">
-        <img class="information " src="img/boats.svg" alt="info icon"/>
+    <div>
+      <figure>
+        <img src=" img/boats.svg" alt="info icon" />
       </figure>
-      <div class="display_inline_block">
-        <h2 class="real_information ">Boat Accidents</h2>
+      <div>
+        <h2>Boat Accidents</h2>
         <p>Datature has data of people who were injured in boat accidents from 1960-2016</p>
       </div>
     </div>
-  </div>
-  <div id="statistic_screen" class="center_content">
-    <div class="center_items">
-        <button id="max" class="see_data_btn ">Max # of Boat</button>
-        <button id="max_trains" class="see_data_btn ">Max # of Trains</button>
-        <button id="suma_trains" class="see_data_btn ">Total # of Trains</button>
-        <button id="suma_boat" class="see_data_btn ">Total # of Boat</button>
+  </div> -->
+  <div id="statistic_screen">
+    <div>
+      <button id="max">Max # of Boat</button>
+      <button id="max_trains">Max # of Trains</button>
+      <button id="suma_trains">Total # of Trains</button>
+      <button id="suma_boat">Total # of Boat</button>
     </div>
     <div id="stats"></div>
-    <div id="stats_trains" ></div>
+    <div id="stats_trains"></div>
     <div id="suma_train"></div>
     <div id="suma_boats"></div>
   </div>
-  <div id="type_accident_screen" class="center_content">
-    <div class="center_items box_types">
-      <figure class="display_inline_block">
-        <img class="images" src="img/location.png" alt="location"/>
+  <div id="type_accident_screen">
+    <div>
+      <figure>
+        <!-- <img images" src="img/location.png" alt="location" /> -->
       </figure>
-      <div class="display_inline_block">
-        <h2 class="title_type">Train Accidents</h2>
-        <p class="description_type">There have been a number of fatal commuter train crashes through the years. Here's a
+      <div>
+        <h2>Train Accidents</h2>
+        <p>There have been a number of fatal commuter train crashes through the years. Here's a
           list of years and the number of injured people since 1960.</p>
-        <button id="train" class="see_data_btn train_n_boats">Trains</button>
+        <button id="train" rain_n_boats">Trains</button>
       </div>
     </div>
-    <div class="center_items box_types">
-      <figure class="display_inline_block">
-        <img class="images" src="img/sea.png" alt="location"/>
+    <div>
+      <figure>
+        <!-- <img src="img/sea.png" alt="location" /> -->
       </figure>
-      <div class="display_inline_block">
-        <h2 class="title_type">Boat Accidents</h2>
-        <p class="description_type">There have been a number of recreational boat crashes through the years. Here's a
+      <div>
+        <h2>Boat Accidents</h2>
+        <p>There have been a number of recreational boat crashes through the years. Here's a
           list of years and the number of injured people since 1960.</p>
-        <button id="boat" class="see_data_btn train_n_boats">Boats</button>
+        <button id="boat">Boats</button>
       </div>
     </div>
   </div>
-  <div id="year_accident_screen" class="center_content">
-    <div class="center_content">
-      <div class="center_items">
-        <select id="years" class="year_dropdown_box">
+  <div id="year_accident_screen">
+    <div>
+      <div>
+        <select id="years">
           <option> YEAR </option>
           <option value="1960-01-04">1960</option>
           <option value="1965-01-04">1965</option>
@@ -162,21 +194,22 @@
           <option value="2015-01-04">2015</option>
           <option value="2016-01-04">2016</option>
         </select>
-        <button id="see_data" class="see_data_btn">SEE DATA</button>
+        <button id="see_data" ">SEE DATA</button>
       </div>
-      <div id="year_data"></div>
+      <div id=" year_data"></div>
     </div>
   </div>
   <div id="train_screen">
-    <button id="sort_por_ano" class="see_data_btn sort_year_btn">Sort by Latest year</button>
+    <button id="sort_por_ano">Sort by Latest year</button>
     <div id="data_train"></div>
   </div>
   <div id="boat_screen">
-    <button id="sort_por_ano_boat" class="see_data_btn sort_year_btn">Sort by most injured people</button>
+    <button id="sort_por_ano_boat">Sort by most injured people</button>
     <div id="data_boats"></div>
   </div>
   <script src="./data/injuries/injuries.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
 </body>
+
 </html>

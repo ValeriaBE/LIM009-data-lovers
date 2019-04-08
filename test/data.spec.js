@@ -118,8 +118,9 @@ const outputsort = [
 const statsBy = ['Total_Injured_Persons_Train_Accidents_Rail_Roads'];
 const outputComputestats = 1884;
 
-const sumaBy = ['Total_Injured_Persons_Recreational_Boating'];
-const outputComputesuma = 105799;
+
+const outputtotalBoat = 105799;
+const outputtotalTrain = 10585;
 
 const sortByIgual = 'accidentstrain';
 const sortOrderIgual = 'D';
@@ -141,22 +142,21 @@ const outputigual2 = [
   {Year: '1965-01-04', accidentstrain: null}
 ];
 
-
-describe('showArrTrain', () => {
-  it('debería ser una función', () => {
-    expect(typeof showArrTrain).toBe('function');
+describe('newArrTrain', () => {
+  it('debería ser un function', () => {
+    expect(typeof newArrTrain).toBe('function');
   });  
   it('debería retornar un array de objetos de year y tren', () => {
-    expect(showArrTrain(input)).toEqual(output);
+    expect(newArrTrain(input)).toEqual(output);
   });
 });
 
-describe('showArrBoat', () => {
-  it('debería ser una función', () => {
-    expect(typeof showArrBoat).toBe('function');
+describe('newArrBoat', () => {
+  it('debería ser un function', () => {
+    expect(typeof newArrBoat).toBe('function');
   });  
   it('debería retornar un array de objetos de year y bote', () => {
-    expect(showArrBoat(input)).toEqual(output2);
+    expect(newArrBoat(input)).toEqual(output2);
   });
 });
 
@@ -174,7 +174,7 @@ describe('sortData', () => {
     expect(typeof sortData).toBe('function');
   }); 
   it('debería retornar un array de objetos ordenados por año', () => {
-    expect(sortData(showArrTrain(input), sortBy, sortOrder)).toEqual(outputsort);
+    expect(sortData(newArrTrain(input), sortBy, sortOrder)).toEqual(outputsort);
   }); 
   it('debería retornar un array de objetos ordenados si son iguales descendente', () => {
     expect(sortData(inputigual, sortByIgual, sortOrderIgual)).toEqual(outputigual);
@@ -188,16 +188,25 @@ describe('computeStats', () => {
   it('debería ser una función', () => {
     expect(typeof computeStats).toBe('function');
   });  
-  it('debria retornar un array con un number', () => {
+  it('debria retornar un number', () => {
     expect(computeStats(input, statsBy)).toEqual(outputComputestats);
   });
 });
 
+describe('computeSumaBoats', () => {
+  it('debería ser un function', () => {
+    expect(typeof computeSumaBoats).toBe('function');
+  }); 
+  it('deberia retornar un number', () => {
+    expect(computeSumaBoats(input)).toEqual(outputtotalBoat);
+  }); 
+});
+
 describe('computeSumaTrains', () => {
-  it('debería ser una función', () => {
+  it('debería ser un function', () => {
     expect(typeof computeSumaTrains).toBe('function');
   }); 
-  it('deberia retornar un array con un number', () => {
-    expect(computeSumaTrains(input, sumaBy)).toEqual(outputComputesuma);
+  it('deberia retornar un number', () => {
+    expect(computeSumaTrains(input)).toEqual(outputtotalTrain);
   }); 
 });
