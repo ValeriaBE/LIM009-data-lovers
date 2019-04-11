@@ -105,13 +105,13 @@ const pintarBoat = (data) => {
   return string;
 };
 
-sortBtnTrain.addEventListener('click', () => {
-  cargarJson();
-});
+// sortBtnTrain.addEventListener('click', () => {
+//   cargarJson();
+// });
 
-sortBtnBoat.addEventListener('click', () => {
-  pintarBoat((sortData(newArrBoat(INJURIES), 'accidentsboat', 'D')));
-});
+// sortBtnBoat.addEventListener('click', () => {
+//   pintarBoat((sortData(newArrBoat(INJURIES), 'accidentsboat', 'D')));
+// });
 
 const yearData = document.getElementById('year_data');
 const pintarYear = (data) => {
@@ -153,9 +153,9 @@ statsBtn.addEventListener('click', () => {
 
 // pintando máximo boating
 const maxbtn = document.getElementById('max');
-maxbtn.addEventListener('click', () => {
-  pintarMax(computeStats(INJURIES, 'Total_Injured_Persons_Recreational_Boating'));
-});
+// maxbtn.addEventListener('click', () => {
+//   pintarMax(computeStats(INJURIES, 'Total_Injured_Persons_Recreational_Boating'));
+// });
 const stats = document.getElementById('stats');
 const pintarMax = (maximo) => {
   let string = '';
@@ -171,21 +171,21 @@ const pintarMax = (maximo) => {
 
 // pintando máximo Trains
 const maxbtnTrains = document.getElementById('max_trains');
-maxbtnTrains.addEventListener('click', () => {
-  pintarMax(computeStats(INJURIES, 'Total_Injured_Persons_Train_Accidents_Rail_Roads'));
-});
+// maxbtnTrains.addEventListener('click', () => {
+//   pintarMax(computeStats(INJURIES, 'Total_Injured_Persons_Train_Accidents_Rail_Roads'));
+// });
 
 // pintando suma total Trains
 const sumabtnTrains = document.getElementById('suma_trains');
-sumabtnTrains.addEventListener('click', () => {
-  cargarJson();
-});
+// sumabtnTrains.addEventListener('click', () => {
+//   cargarJson();
+// });
 
 // pintando suma total Boating
 const sumabtnBoat = document.getElementById('suma_boat');
-sumabtnBoat.addEventListener('click', () => {
-  cargarJson();
-});
+// sumabtnBoat.addEventListener('click', () => {
+//   cargarJson();
+// });
 
 const url = './data/injuries/injuries.json';
 const cargarJson = () => {
@@ -195,12 +195,27 @@ const cargarJson = () => {
     })
     .then(data => {
       containerTrain.innerHTML = pintarTrain(newArrTrain(data));
-      containerTrain.innerHTML = pintarTrain((sortData(newArrTrain(data), 'Year', 'D')));
+      sortBtnTrain.addEventListener('click', () => {
+        containerTrain.innerHTML = pintarTrain(sortData(newArrTrain(data), 'Year', 'D'));
+      });
       containerBoat.innerHTML = pintarBoat(newArrBoat(data));
+      sortBtnBoat.addEventListener('click', () => {
+        containerBoat.innerHTML = pintarBoat((sortData(newArrBoat(data), 'accidentsboat', 'D')));
+      });
       const option = document.getElementById('years').value;
       yearData.innerHTML = pintarYear(filterData(data, option));
-      stats.innerHTML = pintarMax(computeSumaBoats(data));
-      stats.innerHTML = pintarMax(computeSumaTrains(data));
+      maxbtn.addEventListener('click', () => {
+        stats.innerHTML = pintarMax(computeStats(INJURIES, 'Total_Injured_Persons_Recreational_Boating'));
+      });
+      maxbtnTrains.addEventListener('click', () => {
+        stats.innerHTML = pintarMax(computeStats(INJURIES, 'Total_Injured_Persons_Train_Accidents_Rail_Roads'));
+      });
+      sumabtnTrains.addEventListener('click', () => {
+        stats.innerHTML = pintarMax(computeSumaBoats(data));
+      });
+      sumabtnBoat.addEventListener('click', () => {
+        stats.innerHTML = pintarMax(computeSumaTrains(data));
+      });
     });
 };
 console.log(cargarJson());
