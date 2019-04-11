@@ -16,7 +16,7 @@
       <img class="icon inline" src="img/government.svg" alt="">
       <h1 class="inline title">Datature</h1>
     </div>
-    <div id="menu_principal" class="inline-block navbar">
+    <div id="menu_principal" class=" navbar">
       <nav>
         <ul>
           <li class="inline">
@@ -29,20 +29,20 @@
             <button id="ano_menu_btn">Year of accident</button>
           </li>
           <li class="inline">
-            <button id="about_menu_btn">Stats</button>
+            <button id="stats_menu_btn">Stats</button>
           </li>
         </ul>
       </nav>
     </div>
   </header>
-  <section class="hero">
+  <section id="banner" class="hero">
     <div class="hero-inner">
       <h2>Official Government</h2>
       <h3>Information</h3>
       <a href="https://www.templatemonster.com/demo/52938.html" class="btn learn">Learn more</a>
     </div>
   </section>
-  <main>
+  <main id="home_screen">
     <div class="three-facts">
       <div class="inline-block facts">
         <figure class="fact-img-box">
@@ -67,60 +67,17 @@
       </div>
     </div>
     <div class="mailing-list">
-      <h2>Join our mailing list</h2>
+      <h2 class="title-mail">Join our mailing list</h2>
       <input class="input-mail" type="text" placeholder="Your name">
       <input class="input-mail" type="text" placeholder="Your email address">
       <button class="btn join">Join</button>
     </div>
+    <div class="quote">
+      <h3>The care of human life and happiness, and not their destruction, is the first and only object of good
+        government.</h3>
+      <h4> - Thomas Jefferson</h4>
+    </div>
   </main>
-
-  <!-- <div id="home_screen">
-    <div>
-      <figure>
-        <img src=" imgng" alt="info icon" />
-      </figure>
-      <div>
-        <h2>Real</h2>
-        <p>Datature provides real data straight from the US transport records</p>
-      </div>
-    </div>
-    <div>
-      <figure>
-        <img src=" img/fasttime.svg" alt="info icon" />
-      </figure>
-      <div>
-        <h2>Fast Response</h2>
-        <p>Datature provides a fast web response</p>
-      </div>
-    </div>
-    <div>
-      <figure>
-        <img src=" img/calendar.png" alt="info icon" />
-      </figure>
-      <div>
-        <h2>Up to date facts</h2>
-        <p>Datature has all the facts up to date and will update once the data has been verified</p>
-      </div>
-    </div>
-    <div>
-      <figure>
-        <img src=" img/subway.png" alt="info icon" />
-      </figure>
-      <div>
-        <h2>Train Accidents</h2>
-        <p>Datature has data of people who were injured in train accidents from 1960-2016</p>
-      </div>
-    </div>
-    <div>
-      <figure>
-        <img src=" img/boats.svg" alt="info icon" />
-      </figure>
-      <div>
-        <h2>Boat Accidents</h2>
-        <p>Datature has data of people who were injured in boat accidents from 1960-2016</p>
-      </div>
-    </div>
-  </div> -->
   <div id="statistic_screen">
     <div>
       <button id="max">Max # of Boat</button>
@@ -134,26 +91,20 @@
     <div id="suma_boats"></div>
   </div>
   <div id="type_accident_screen">
-    <div>
-      <figure>
-        <!-- <img images" src="img/location.png" alt="location" /> -->
-      </figure>
+    <div class="train-boxes inline-block type-box">
       <div>
         <h2>Train Accidents</h2>
         <p>There have been a number of fatal commuter train crashes through the years. Here's a
           list of years and the number of injured people since 1960.</p>
-        <button id="train" rain_n_boats">Trains</button>
+        <button id="train" class="btn type-btn">Trains</button>
       </div>
     </div>
-    <div>
-      <figure>
-        <!-- <img src="img/sea.png" alt="location" /> -->
-      </figure>
+    <div class="train-boxes inline-block type-box move-right">
       <div>
         <h2>Boat Accidents</h2>
         <p>There have been a number of recreational boat crashes through the years. Here's a
           list of years and the number of injured people since 1960.</p>
-        <button id="boat">Boats</button>
+        <button id="boat" class="btn type-btn">Boats</button>
       </div>
     </div>
   </div>
@@ -196,20 +147,31 @@
         </select>
         <button id="see_data" ">SEE DATA</button>
       </div>
-      <div id=" year_data"></div>
+      <div id="year_data"></div>
     </div>
   </div>
   <div id="train_screen">
-    <button id="sort_por_ano">Sort by Latest year</button>
+    <button id="sort_por_ano" class="type-btn btn">Sort by Latest year</button>
     <div id="data_train"></div>
   </div>
   <div id="boat_screen">
-    <button id="sort_por_ano_boat">Sort by most injured people</button>
+    <button id="sort_por_ano_boat" class="type-btn btn">Sort by most injured people</button>
     <div id="data_boats"></div>
   </div>
+  <footer id="footer">
+    <div class="footer-about inline-block">
+      <h3>About us</h3>
+      <p>Government is the state website where you can find the latest information about the work of the local
+        government as well as important news for our citizens and city guests. You can also gain access to the community
+        services and learn more about the departments of our government or leave a suggestion for us.</p>
+    </div>
+    <div class="social-media inline-block">
+      <h3>Social media</h3>
+      <img class="social" src="img/hi.png" alt="">
+    </div>
+  </footer>
   <script src="./data/injuries/injuries.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
 </body>
-
 </html>

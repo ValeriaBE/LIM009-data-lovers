@@ -1,5 +1,4 @@
 const homeButton = document.getElementById('home_menu_btn');
-const aboutButton = document.getElementById('about_menu_btn');
 const typeButton = document.getElementById('tipo_menu_btn');
 const yearButton = document.getElementById('ano_menu_btn');
 const homeScreen = document.getElementById('home_screen');
@@ -7,12 +6,15 @@ const statisticScreen = document.getElementById('statistic_screen');
 const typeScreen = document.getElementById('type_accident_screen');
 const yearScreen = document.getElementById('year_accident_screen');
 const trainScreen = document.getElementById('train_screen');
+const statsBtn = document.getElementById('stats_menu_btn');
 const trainBtn = document.getElementById('train');
 const boatScreen = document.getElementById('boat_screen');
 const boatBtn = document.getElementById('boat');
 const seeDataBtn = document.getElementById('see_data');
 const sortBtnTrain = document.getElementById('sort_por_ano');
 const sortBtnBoat = document.getElementById('sort_por_ano_boat');
+const banner = document.getElementById('banner');
+const footer = document.getElementById('footer');
 
 statisticScreen.style.display = 'none';
 typeScreen.style.display = 'none';
@@ -21,6 +23,8 @@ boatScreen.style.display = 'none';
 trainScreen.style.display = 'none';
 
 homeButton.addEventListener('click', () => {
+  banner.style.display = 'flex';
+  footer.style.position = 'relative';
   homeScreen.style.display = 'block';
   statisticScreen.style.display = 'none';
   typeScreen.style.display = 'none';
@@ -29,41 +33,38 @@ homeButton.addEventListener('click', () => {
   trainScreen.style.display = 'none';
 });
 
-aboutButton.addEventListener('click', () => {
-  homeScreen.style.display = 'none';
-  typeScreen.style.display = 'none';
-  yearScreen.style.display = 'none';
-  boatScreen.style.display = 'none';
-  trainScreen.style.display = 'none';
-  statisticScreen.style.display = 'block';
-});
-
 typeButton.addEventListener('click', () => {
+  banner.style.display = 'none';
   homeScreen.style.display = 'none';
   yearScreen.style.display = 'none';
   statisticScreen.style.display = 'none';
   boatScreen.style.display = 'none';
   trainScreen.style.display = 'none';
   typeScreen.style.display = 'block';
+  footer.style.position = 'relative';
 });
 
 yearButton.addEventListener('click', () => {
+  banner.style.display = 'none';
   homeScreen.style.display = 'none';
   typeScreen.style.display = 'none';
   statisticScreen.style.display = 'none';
   boatScreen.style.display = 'none';
   trainScreen.style.display = 'none';
   yearScreen.style.display = 'block';
+  footer.style.position = 'fixed';
 });
 
 trainBtn.addEventListener('click', () => {
+  banner.style.display = 'none';
   homeScreen.style.display = 'none';
   typeScreen.style.display = 'none';
   statisticScreen.style.display = 'none';
   yearScreen.style.display = 'none';
   boatScreen.style.display = 'none';
   trainScreen.style.display = 'block';
-  pintarTrain(newArrTrain(INJURIES));
+  footer.style.position = 'relative';
+  cargarJson();
 });
 
 // pintando data
@@ -71,27 +72,24 @@ const containerTrain = document.getElementById('data_train');
 const pintarTrain = (data) => {
   let string = '';
   for (let i = 0; i < data.length; i++) {
-    string += ` 
-        <div class="row display_inline_block">
-          <div class="column">
-            <div class="boxes_design_type display_inline_block">
-            <p>Year: ${data[i].Year}</p>
-            <p>#: ${data[i].accidentstrain}</p>
-            </div>
-          </div>
+    string += `<div class="inline-block train-boxes card-boxes">
+          <p>Year: ${data[i].Year}</p>
+          <p>#: ${data[i].accidentstrain}</p>
         </div>`;
   }
-  containerTrain.innerHTML = string;
+  return string;
 };
 
 boatBtn.addEventListener('click', () => {
+  banner.style.display = 'none';
   homeScreen.style.display = 'none';
   typeScreen.style.display = 'none';
   statisticScreen.style.display = 'none';
   yearScreen.style.display = 'none';
   trainScreen.style.display = 'none';
   boatScreen.style.display = 'block';
-  pintarBoat(newArrBoat(INJURIES));
+  footer.style.position = 'relative';
+  cargarJson();
 });
 
 const containerBoat = document.getElementById('data_boats');
@@ -99,20 +97,16 @@ const pintarBoat = (data) => {
   let string = '';
   for (let i = 0; i < data.length; i++) {
     string += ` 
-        <div class="row display_inline_block">
-          <div class="column">
-            <div class="boxes_design_type display_inline_block">
+        <div class="inline-block train-boxes card-boxes">
             <p>Year: ${data[i].Year}</p>
             <p>#: ${data[i].accidentsboat}</p>
-            </div>
-          </div>
         </div>`;
   }
-  containerBoat.innerHTML = string;
+  return string;
 };
 
 sortBtnTrain.addEventListener('click', () => {
-  pintarTrain((sortData(newArrTrain(INJURIES), 'Year', 'D')));
+  cargarJson();
 });
 
 sortBtnBoat.addEventListener('click', () => {
@@ -139,12 +133,22 @@ const pintarYear = (data) => {
             </div>
           </div>`;
   }
-  yearData.innerHTML = string;
+  return string;
 };
 
 seeDataBtn.addEventListener('click', () => {
-  const option = document.getElementById('years').value;
-  pintarYear(filterData(INJURIES, option));
+  cargarJson();
+});
+
+statsBtn.addEventListener('click', () => {
+  banner.style.display = 'none';
+  homeScreen.style.display = 'none';
+  typeScreen.style.display = 'none';
+  boatScreen.style.display = 'none';
+  yearScreen.style.display = 'none';
+  trainScreen.style.display = 'none';
+  statisticScreen.style.display = 'block';
+  footer.style.position = 'fixed';
 });
 
 // pintando máximo boating
@@ -162,7 +166,7 @@ const pintarMax = (maximo) => {
         <p>#:${maximo}</p>
       </div>
     </div>`;
-  stats.innerHTML = string;
+  return string;
 };
 
 // pintando máximo Trains
@@ -174,23 +178,29 @@ maxbtnTrains.addEventListener('click', () => {
 // pintando suma total Trains
 const sumabtnTrains = document.getElementById('suma_trains');
 sumabtnTrains.addEventListener('click', () => {
-  pintarMax(computeSumaTrains(INJURIES));
+  cargarJson();
 });
 
 // pintando suma total Boating
 const sumabtnBoat = document.getElementById('suma_boat');
 sumabtnBoat.addEventListener('click', () => {
-  pintarMax(computeSumaBoats(INJURIES));
+  cargarJson();
 });
 
-
+const url = './data/injuries/injuries.json';
 const cargarJson = () => {
-  fetch('./data/injuries/injuries.json')
+  fetch(url)
     .then(res => {
       return res.json();
     })
     .then(data => {
-      console.log(data);
+      containerTrain.innerHTML = pintarTrain(newArrTrain(data));
+      containerTrain.innerHTML = pintarTrain((sortData(newArrTrain(data), 'Year', 'D')));
+      containerBoat.innerHTML = pintarBoat(newArrBoat(data));
+      const option = document.getElementById('years').value;
+      yearData.innerHTML = pintarYear(filterData(data, option));
+      stats.innerHTML = pintarMax(computeSumaBoats(data));
+      stats.innerHTML = pintarMax(computeSumaTrains(data));
     });
 };
-cargarJson();
+console.log(cargarJson());
