@@ -118,14 +118,14 @@ const pintarYear = (data) => {
   let string = '';
   for (let i = 0; i < data.length; i++) {
     string += `
-          <div class="center_items">
-            <div class="box_type_year display_inline space text_align_center ">
+          <div class='year-screen center-items'>
+            <div class='inline-block year-box' >
               <p>Trains</p>
               </br>
               <p>Year: ${data[i].Year}</p>
               <p>#: ${data[i].Boats}</p>
             </div>
-            <div class="box_type_year display_inline text_align_center ">
+            <div class = 'inline-block year-box' >
               <p>Boats</p>
               </br>
               <p>Year: ${data[i].Year}</p>
@@ -160,7 +160,7 @@ const stats = document.getElementById('stats');
 const pintarMax = (maximo) => {
   let string = '';
   string += ` 
-    <div class="box_stats center_content ">
+    <div class="dropdown-box year-box width-stats">
       <div>
         <p>Injured People:</p>
         <p>#:${maximo}</p>

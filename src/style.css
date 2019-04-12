@@ -196,3 +196,30 @@ footer {
   margin:15px;
   background-color: #609FE6;
 }
+
+.year-box{
+  border-style: solid;
+  border-color: #3E5B84;
+  text-align: center;
+  padding:20px;
+  margin-right: 20px;
+  border-radius: 20px;
+}
+.year-screen{
+  margin-top: 50px;
+}
+.dropdown-box{
+  margin-top:30px;
+}
+.space{
+  margin-right:20px;
+}
+.center-items{
+  justify-content: center;
+  align-content: center;
+  display: flex;
+}
+
+.width-stats{
+  width: 10%;
+}
