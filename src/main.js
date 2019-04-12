@@ -218,4 +218,4 @@ const cargarJson = () => {
       });
     });
 };
-console.log(cargarJson());
+
